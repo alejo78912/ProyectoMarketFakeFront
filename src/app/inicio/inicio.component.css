@@ -1,0 +1,19 @@
+/* Establece el ancho máximo del contenedor para limitar el número de columnas */
+.container {
+    max-width: 1700px; /* Puedes ajustar este valor según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.jumbotron{
+
+    margin-left: 400px; /* Espacio entre tarjetas */
+    margin-right: 200px; /* Espacio entre tarjetas */
+}
+
+.col-md-6{
+
+    
+    margin-left: 400px; /* Espacio entre tarjetas */
+    margin-right: 200px; /* Espacio entre tarjetas */
+}
+

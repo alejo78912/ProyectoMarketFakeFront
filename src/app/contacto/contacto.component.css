@@ -1,0 +1,37 @@
+/* Estilos para el encabezado */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.mt-5{
+
+    margin-left: 250px;
+}
+
+/* Estilos para la lista de contactos */
+ul.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+ul.list-unstyled i {
+    margin-right: 10px;
+    color: #333;
+    ; /* Color azul para los iconos */
+    font-size: 20px;
+}
+
+/* Estilos para los enlaces */
+ul.list-unstyled a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul.list-unstyled a:hover {
+    text-decoration: underline;
+}

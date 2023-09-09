@@ -1,0 +1,36 @@
+.card {
+    width: 300px; /* Ancho deseado de la tarjeta */
+    height: 400px; /* Altura deseada de la tarjeta */
+    margin-bottom: 20px;
+    text-align: center; /* Centra el contenido de la tarjeta horizontalmente */
+}
+
+.col-md-4 {
+    margin-bottom: 20px; /* Espacio entre las filas de tarjetas */
+  
+    margin-right: 150px; /* Espacio entre tarjetas */
+
+
+}
+
+/* Ajusta el tamaño de las imágenes de las tarjetas */
+.card-img-top {
+    width: 160px; /* Ancho deseado de la imagen */
+    height: 200px; /* Altura deseada de la imagen */
+    display: block; /* Centra la imagen horizontalmente en su contenedor */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    
+}
+
+/* Establece el ancho máximo para las columnas en pantallas grandes */
+@media (min-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 calc(33.333% - 40px); /* 33.333% para tres tarjetas por fila con margen */
+        max-width: calc(33.333% - 40px);
+    }
+}
+
+.btn-primary{
+    background: gray;
+    border: 0;
+}

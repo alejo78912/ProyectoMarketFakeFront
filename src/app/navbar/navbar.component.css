@@ -1,0 +1,11 @@
+.navbar a {
+    color: #fff; /* Cambia el color de texto a tu elección */
+    font-family: Arial, sans-serif; /* Cambia el tipo de letra a tu elección */
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+    padding: 10px 20px; /* Añadir espacio alrededor de los enlaces */
+  }
+
+  .navbar a:hover {
+    font-size: 24px;
+    color: yellow;
+  }
