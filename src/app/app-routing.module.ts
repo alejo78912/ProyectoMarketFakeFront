@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './inicio/inicio.component';
-import { CarritoComponent } from './carrito/carrito.component';
-import { ArticulosComponent } from './articulos/articulos.component';
-import { AdminComponent } from './admin/admin.component';
-import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
-import { EmpleadoComponent } from './empleado/empleado.component';
-import { InciarSesionComponent } from './inciar-sesion/inciar-sesion.component';
-import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { InformeComponent } from './informe/informe.component';
-import { InventarioComponent } from './inventario/inventario.component';
-import { VentaComponent } from './venta/venta.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { InicioComponent } from './models/inicio/inicio.component';
+import { CarritoComponent } from './models/carrito/carrito.component';
+import { ArticulosComponent } from './models/articulos/articulos.component';
+import { AdminComponent } from './models/admin/admin.component';
+import { DetalleProductoComponent } from './models/detalle-producto/detalle-producto.component';
+import { EmpleadoComponent } from './models/empleado/empleado.component';
+import { InciarSesionComponent } from './models/inciar-sesion/inciar-sesion.component';
+import { RegistrarseComponent } from './models/registrarse/registrarse.component';
+import { InformeComponent } from './models/informe/informe.component';
+import { InventarioComponent } from './models/inventario/inventario.component';
+import { VentaComponent } from './models/venta/venta.component';
+import { ContactoComponent } from './models/contacto/contacto.component';
+import { UsuarioComponent } from './models/usuario/usuario.component';
 
 const routes: Routes = [{path : '', component:InicioComponent},
 {path : 'inicio', component:InicioComponent},
