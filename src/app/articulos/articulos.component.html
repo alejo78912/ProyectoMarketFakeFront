@@ -5,7 +5,7 @@
         <div class="col-md-4 mb-4">
             <div *ngFor="let producto of productos">
             <div class="card">
-                <img [src]= "producto.urlPhoto" class="card-img-top" alt="{{producto.nombreProducto}}">
+                <img [src]= "producto.url_photo" class="card-img-top" alt="{{producto.nombreProducto}}">
                 <div class="card-body">
                     <h5 class="card-title">{{producto.nombreProducto}}</h5>
                     <p class="card-text">{{producto.descripcionProducto}}</p>
