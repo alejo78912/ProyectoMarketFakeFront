@@ -1,11 +1,11 @@
 <div class="container mt-5">
     <div class="row">
         
-        <h1 class="title">Articulos a la venta</h1>
+        <h1 class="title">Articulos a la venta</h1><br><br>
         <div class="col-md-4 mb-4">
             <div *ngFor="let producto of productos">
             <div class="card">
-                <img [src]="producto.urlPhoto" class="card-img-top" alt="Producto 1">
+                <img [src]= "producto.urlPhoto" class="card-img-top" alt="{{producto.nombreProducto}}">
                 <div class="card-body">
                     <h5 class="card-title">{{producto.nombreProducto}}</h5>
                     <p class="card-text">{{producto.descripcionProducto}}</p>

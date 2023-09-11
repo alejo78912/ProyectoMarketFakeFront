@@ -49,10 +49,7 @@ import { IniciarSesionService } from '././iniciar-sesion.service';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-<<<<<<< HEAD
     HttpClientModule,
-=======
->>>>>>> 8d4c5bae05172824d4d9f9140598a01585b10dfe
   ],
   providers: [ IniciarSesionService,
                 UsuarioComponent ],
