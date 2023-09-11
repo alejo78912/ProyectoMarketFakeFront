@@ -1,25 +1,26 @@
-<div class="container mt-5">
+<!-- login.component.html -->
+
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    Iniciar sesión
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
-                        <button type="submit" class="btn btn-primary btn-block"><a href="">Registrarse</a></button>
-                    </form>
-                </div>
-            </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">Iniciar Sesión</div>
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="form-group">
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" id="username" class="form-control" formControlName="username" required />
+              </div>
+              <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" class="form-control" formControlName="password" required />
+              </div>
+              <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </form>
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  
