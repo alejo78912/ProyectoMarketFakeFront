@@ -1,29 +1,22 @@
-<div class="container">
-    <div class="row">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="position-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            Categoría 1
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Categoría 2
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Categoría 3
-                        </a>
-                    </li>
-                    <!-- Agrega más categorías según sea necesario -->
-                </ul>
-            </div>
-        </nav>
-        <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4">
-            <!-- Contenido de tu página principal aquí -->
-        </main>
+<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white ">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <div style="font-weight: bolder;">
+            Menu Principal
+        </div>
+        <br>
+        <br>
+        <a routerLink="/inventario" href="#" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Inventario</span></a
+        >
+        <a routerLink="/admin" href="#" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Administrador</span></a
+        >
+        <a routerLink="/" href="#" class="list-group-item list-group-item-action py-2 ripple"
+          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Categoria 4</span></a
+        >
+        
+        
+      </div>
     </div>
-</div>
+  </nav>

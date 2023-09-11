@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  url="https://t3.ftcdn.net/jpg/05/36/46/64/360_F_536466456_ROneSNBzDA10yJfMQkLFsq9412N8yCiG.jpg"
+
 }

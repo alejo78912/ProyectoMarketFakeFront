@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { CarritoComponent } from './carrito/carrito.component';
-import { ArticulosComponent } from './articulos/ArticulosComponent';
+import { ArticulosComponent } from './articulos/articulos.component';
 import { AdminComponent } from './admin/admin.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
@@ -14,7 +14,7 @@ import { VentaComponent } from './venta/venta.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 
-const routes: Routes = [{path : '', component:InciarSesionComponent},
+const routes: Routes = [{path : '', component:ArticulosComponent},
 {path : 'inicio', component:InicioComponent},
 {path: 'carrito', component:CarritoComponent},
 {path: 'articulos', component:ArticulosComponent},
