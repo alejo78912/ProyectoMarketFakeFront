@@ -1,14 +1,3 @@
-/* Estilo para el navbar vertical */
-.vertical-navbar {
-  width: 210px;
-  height: 100vh;
-  background-color: #212529;
-  position: fixed; /* Fija la barra de navegación en su lugar */
-  top: 0; /* La barra de navegación comenzará desde la parte superior */
-  left: 0; /* La barra de navegación estará en el extremo izquierdo */
-z-index: 500px; /* Asegura que la barra de navegación esté por encima de otros elementos */
-  overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
-}
 
 
 
