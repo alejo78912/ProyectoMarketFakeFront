@@ -14,6 +14,9 @@ import { VentaComponent } from './venta/venta.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ProductosService } from './productos.service';
+import { AgregarCategoriaAdminComponent } from './agregar-categoria-admin/agregar-categoria-admin.component';
+import { AgregarUsuarioAdminComponent } from './agregar-usuario-admin/agregar-usuario-admin.component';
+import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-producto-admin.component';
 
 const routes: Routes = [{path : '', component:ArticulosComponent},
 {path : 'inicio', component:InicioComponent},
@@ -28,7 +31,10 @@ const routes: Routes = [{path : '', component:ArticulosComponent},
 {path: 'inventario', component:InventarioComponent},
 {path: 'venta', component:VentaComponent},
 {path: 'usuario', component:UsuarioComponent},
-{path: 'contacto', component:ContactoComponent}]
+{path: 'contacto', component:ContactoComponent},
+{path: 'agregarCategoria', component:AgregarCategoriaAdminComponent},
+{path: 'agregarusuarioAdmin', component:AgregarUsuarioAdminComponent},
+{path: 'agregarProducto', component:AgregarProductoAdminComponent}]
 ;
 
 @NgModule({

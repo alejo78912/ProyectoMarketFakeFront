@@ -22,6 +22,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { IniciarSesionService } from '././iniciar-sesion.service';
+import { AgregarUsuarioAdminComponent } from './agregar-usuario-admin/agregar-usuario-admin.component';
+import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-producto-admin.component';
+import { AgregarCategoriaAdminComponent } from './agregar-categoria-admin/agregar-categoria-admin.component';
+import { NavBarAdminComponent } from './nav-bar-admin/nav-bar-admin.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { IniciarSesionService } from '././iniciar-sesion.service';
     InicioComponent,
     NavbarComponent,
     RegistrarseComponent,
-    ContactoComponent
+    ContactoComponent,
+    AgregarUsuarioAdminComponent,
+    AgregarProductoAdminComponent,
+    AgregarCategoriaAdminComponent,
+    NavBarAdminComponent
   ],
   imports: [
     BrowserModule,

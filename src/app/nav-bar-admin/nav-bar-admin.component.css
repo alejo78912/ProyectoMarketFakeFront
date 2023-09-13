@@ -1,0 +1,9 @@
+.nav.navbar-nav.navbar-right li a {
+    color: blue;
+}
+
+li a{color:aliceblue !important;}
+
+a{
+    color: aliceblue !important;;
+}

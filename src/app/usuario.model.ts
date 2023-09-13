@@ -5,17 +5,17 @@ export class Usuario {
     apellidoUsuario: string;
     emailUsuario: string;
 	constrasenia: string;
-	tipo_usuario: string;
+	tipoUsuario: string;
 	telefonoUsuario:string;
 
-	constructor(cedulaUsuario: number,nombreUsuario: string,apellidoUsuario: string,emailUsuario: string,constrasenia: string,telefonoUsuario:string, tipo_usuario:string){
+	constructor(cedulaUsuario: number,nombreUsuario: string,apellidoUsuario: string,emailUsuario: string,constrasenia: string,telefonoUsuario:string, tipoUsuario:string){
 	this.cedulaUsuario=  cedulaUsuario;
 	this.nombreUsuario= nombreUsuario;
     this.apellidoUsuario= apellidoUsuario;
     this.emailUsuario= emailUsuario;
 	this.constrasenia= constrasenia;
 	this.telefonoUsuario= telefonoUsuario;
-	this.tipo_usuario = tipo_usuario;
+	this.tipoUsuario = tipoUsuario;
 
 	}
 }

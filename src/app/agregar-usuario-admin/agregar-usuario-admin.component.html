@@ -1,0 +1,43 @@
+<app-nav-bar-admin></app-nav-bar-admin>
+
+<form class="col-lg-6 offset-lg-2">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Cedula</label>
+      <input type="text"[(ngModel)]="usuario.cedulaUsuario" name="cedula_usuario" class="form-control" id="" placeholder="Nombre">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nombre</label>
+      <input type="text"[(ngModel)]="usuario.nombreUsuario" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Apellidos</label>
+      <input type="text"[(ngModel)]="usuario.apellidoUsuario" name="apellido_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellidos">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Email</label>
+      <input type="text"[(ngModel)]="usuario.emailUsuario" name="email_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Contrasena</label>
+        <input type="text"[(ngModel)]="usuario.constrasenia" name="constrasenia" class="form-control" id="exampleInputPassword1" placeholder="Contrasena">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Telefono</label>
+        <input type="text"[(ngModel)]="usuario.telefonoUsuario" name="telefono_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleInputPassword1">Tipo de usuario</label>
+        <input type="text"[(ngModel)]="usuario.tipoUsuario" name="tipo_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
+      </div>
+  
+    <br>
+  
+    <button class="btn btn-primary" (click)="addUsuario()">Submit</button>
+    
+  </form>
