@@ -12,7 +12,7 @@ export class AgregarProductoAdminComponent {
     valor: 0,
     cantidadAVender: 0,
     nombreProducto: "",
-    categoria: 0,
+    idCategoria: 0,
     descripcionProducto: "",
     url_photo: ""}; // Inicializa el modelo
 

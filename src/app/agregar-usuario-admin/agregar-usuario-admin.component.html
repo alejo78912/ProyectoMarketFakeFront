@@ -41,3 +41,33 @@
     <button class="btn btn-primary" (click)="addUsuario()">Submit</button>
     
   </form>
+
+
+
+  <div class="container">
+    <h1>Usuarios</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Cedula</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Email</th>
+          <th>Contraseña</th>
+          <th>Tipo usuario</th>
+          <th>Telefono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{usuario.cedulaUsuario}}</td>
+          <td>{{usuario.nombreUsuario}}</td>
+          <td>{{usuario.apellidoUsuario}}</td>
+          <td>{{usuario.emailUsuario}}</td>
+          <td>{{usuario.constrasenia}}</td>
+          <td>{{usuario.tipoUsuario}}</td>
+          <td>{{usuario.telefonoUsuario}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

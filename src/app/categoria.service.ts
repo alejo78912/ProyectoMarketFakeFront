@@ -13,7 +13,12 @@ export class CategoriaService {
     
    }
 
-  addproducto(categoria: CategoriaModel): Observable<CategoriaModel> {
+   
+   categorias(): Observable<CategoriaModel[]> {
+    return this.http.get<CategoriaModel[]>(this.apiUrl);
+  }
+
+  addCategoria(categoria: CategoriaModel): Observable<CategoriaModel> {
     return this.http.post<CategoriaModel>(this.apiUrl, categoria);
   }
 }

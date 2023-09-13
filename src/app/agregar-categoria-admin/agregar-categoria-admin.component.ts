@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CategoriaModel } from '../categoria.model';
 import { CategoriaService } from '../categoria.service';
 
@@ -7,16 +7,24 @@ import { CategoriaService } from '../categoria.service';
   templateUrl: './agregar-categoria-admin.component.html',
   styleUrls: ['./agregar-categoria-admin.component.css']
 })
-export class AgregarCategoriaAdminComponent {
+export class AgregarCategoriaAdminComponent implements OnInit{
+  categorias: CategoriaModel[] = [];
   categoria: CategoriaModel = { nombreCategoria: ""}; // Inicializa el modelo
 
   constructor(private CategoriaServicio: CategoriaService) {}
 
-  addProducto(): void {
+  addCategoria(): void {
    
-      this.CategoriaServicio.addproducto(this.categoria).subscribe((data) => {
-        // Puedes realizar acciones adicionales aquí, como actualizar la lista de tareas
+      this.CategoriaServicio.addCategoria(this.categoria).subscribe((data) => {
+        this.ngOnInit();
         
       });
     }
+
+    ngOnInit(): void {
+      this.CategoriaServicio.categorias().subscribe(data => {
+        this.categorias = data;
+      });
+    }
+   
 }

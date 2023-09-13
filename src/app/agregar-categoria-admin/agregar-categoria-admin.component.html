@@ -11,7 +11,26 @@
     </div>
   
   
-    <button class="btn btn-primary" (click)="addProducto()">Submit</button>
+    <button class="btn btn-primary" (click)="addCategoria()">Submit</button>
     
   </form>
+
+
+  <div class="container">
+    <h1>Usuarios</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>NOMBRE CATEGORIA</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categoria of categorias">
+          <td>{{categoria.nombreCategoria}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
