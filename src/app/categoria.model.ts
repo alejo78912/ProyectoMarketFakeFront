@@ -1,9 +1,9 @@
-export class CategoriaModel {
-
+export class Categoria {
+    idCategoria: number;
     nombreCategoria: string;
-
-    constructor(nombreCategoria:string){
-
-        this.nombreCategoria = nombreCategoria;
+  
+    constructor(idCategoria: number, nombreCategoria: string) {
+      this.idCategoria = idCategoria;
+      this.nombreCategoria = nombreCategoria;
     }
-}
+  }

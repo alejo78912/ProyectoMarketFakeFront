@@ -1,20 +1,34 @@
+import { Categoria } from './categoria.model';
+
 export class Producto {
+  codProducto: number;
+  valor: number;
+  url_photo: string;
+  cantidadAVender: number;
+  categoria: Categoria;
+  nombreProducto: string;
+  descripcionProducto: string;
 
-    codProducto: number;
-    cantidadAVender: number;
-    descripcionProducto: string;
-    nombreProducto: string;
-    valor: number;
-    url_photo : string;
-    idCategoria: number;
-
-    constructor(codProducto: number,cantidadAVender: number, nombreProducto: string, descripcionProducto: string, valor: number, url_photo: string, idCategoria:number) {
-        this.codProducto = codProducto;
-        this.cantidadAVender = cantidadAVender;
-        this.nombreProducto = nombreProducto;
-        this.descripcionProducto = descripcionProducto;
-        this.valor = valor;
-        this.url_photo = url_photo;
-        this.idCategoria = idCategoria;
-    }
+  constructor(
+    codProducto: number,
+    valor: number,
+    url_photo: string,
+    cantidadAVender: number,
+    categoria: Categoria,
+    nombreProducto: string,
+    descripcionProducto: string
+  ) {
+    this.codProducto = codProducto;
+    this.valor = valor;
+    this.url_photo = url_photo;
+    this.cantidadAVender = cantidadAVender;
+    this.categoria = categoria;
+    this.nombreProducto = nombreProducto;
+    this.descripcionProducto = descripcionProducto;
+  }
 }
+
+
+
+
+

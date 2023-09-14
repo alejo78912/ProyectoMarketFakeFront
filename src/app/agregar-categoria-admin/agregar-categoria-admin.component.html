@@ -3,17 +3,17 @@
 
 
 <form class="col-lg-6 offset-lg-2">
-    
+    <br>
   
     <div class="form-group">
       <label for="exampleInputPassword1">Nombre categoria</label>
       <input type="text"[(ngModel)]="categoria.nombreCategoria" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
     </div>
-  
-  
+    <br>
     <button class="btn btn-primary" (click)="addCategoria()">Submit</button>
-    
-  </form>
+    <br>
+    <br>
+</form>
 
 
   <div class="container">
@@ -27,6 +27,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let categoria of categorias">
+          <td>{{categoria.idCategoria}}</td>
           <td>{{categoria.nombreCategoria}}</td>
 
         </tr>

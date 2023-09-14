@@ -14,29 +14,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mouse</td>
-        <td>Ergonomico</td>
-        <td>12</td>
-        <td>75000</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Macbook Pro</td>
-        <td>16gb</td>
-        <td>2</td>
-        <td>7999900</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>iPad</td>
-        <td>9th gen</td>
-        <td>2</td>
-        <td>2999900</td>
-        
+      <tr scope="row" *ngFor="let producto of productos">
+        <td>{{producto.codProducto}}</td>
+        <td>{{producto.nombreProducto}}</td>
+        <td>{{producto.descripcionProducto}}</td>
+        <td>{{producto.cantidadAVender}}</td>
+        <td>{{producto.valor}}</td>
+        <!-- Display other product attributes as needed -->
       </tr>
     </tbody>
   </table>
+
+
+
+  
+  
+  
+  

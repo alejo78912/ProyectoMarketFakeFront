@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriaModel } from '../categoria.model';
+import { Categoria } from '../categoria.model';
 import { CategoriaService } from '../categoria.service';
 
 @Component({
@@ -8,8 +8,11 @@ import { CategoriaService } from '../categoria.service';
   styleUrls: ['./agregar-categoria-admin.component.css']
 })
 export class AgregarCategoriaAdminComponent implements OnInit{
-  categorias: CategoriaModel[] = [];
-  categoria: CategoriaModel = { nombreCategoria: ""}; // Inicializa el modelo
+  categorias: Categoria[] = [];
+  categoria: Categoria = {
+    nombreCategoria: "",
+    idCategoria: 0
+  }; // Inicializa el modelo
 
   constructor(private CategoriaServicio: CategoriaService) {}
 
