@@ -1,0 +1,40 @@
+/* Estilo para la vista de detalle del producto */
+.product-details {
+    margin: 20px; /* Márgenes alrededor del contenido */
+    padding: 20px; /* Relleno interno del contenido */
+    border: 1px solid #ddd; /* Borde alrededor del contenido */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #fff; /* Fondo blanco */
+  
+    /* Ajusta el ancho máximo y el centro del contenido en la página */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Estilo para el título del producto en la vista de detalle */
+  .product-details h1 {
+    font-size: 24px; /* Tamaño de fuente grande para el título */
+    margin-bottom: 10px; /* Espacio inferior para separarlo del contenido siguiente */
+  }
+  
+  /* Estilo para la imagen del producto en la vista de detalle */
+  .product-details img {
+    max-width: 100%; /* Ajusta la imagen al ancho máximo del contenedor */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-bottom: 20px; /* Espacio inferior para separarlo del contenido siguiente */
+  }
+  
+  /* Estilo para el texto de descripción del producto en la vista de detalle */
+  .product-details p {
+    font-size: 16px; /* Tamaño de fuente regular para el texto */
+    line-height: 1.5; /* Espaciado entre líneas para una lectura fácil */
+    margin-bottom: 15px; /* Espacio inferior entre párrafos */
+  }
+  
+  /* Estilo para el precio del producto en la vista de detalle */
+  .product-details strong {
+    font-size: 18px; /* Tamaño de fuente más grande para el precio */
+    color: #007BFF; /* Color del precio */
+  }
+  

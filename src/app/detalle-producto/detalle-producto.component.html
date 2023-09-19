@@ -1,1 +1,14 @@
-<p>detalle-producto works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Detalle del Producto</h2>
+        <h3>{{ product.productName }}</h3>
+        <p>{{ product.productDescription }}</p>
+        <p>Precio: ${{ product.price }}</p>
+        <p>cantidad: {{ product.quantityToSell }}</p>
+        <p>Categoria: {{ product.category.categoryName }}</p>
+        <img [src]="product.url_photo" alt="{{ product.productName }}" class="img-fluid">
+      </div>
+    </div>
+  </div>
+  

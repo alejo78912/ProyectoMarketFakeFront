@@ -8,26 +8,32 @@ import { Product } from './product.model';
   providedIn: 'root'
 })
 export class ProductsService {
-  private apiUrl = 'http://localhost:8080/api/inventarios';
+  private apiUrlInventory = 'http://localhost:8080/api/inventarios';
+  private apiUrlProduct = 'http://localhost:8080/api/productos'; // Reemplaza con la URL de tu API
 
   constructor(private http: HttpClient) { }
 
   productos(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+    return this.http.get<Product[]>(this.apiUrlInventory);
   }
 
   addproducto(producto: Product): Observable<Product> {
-    return this.http.post<Product>(this.apiUrl, producto);
+    return this.http.post<Product>(this.apiUrlInventory, producto);
   }
 
   addProduct(producto: Product): Observable<Product> {
-    return this.http.post<Product>(this.apiUrl, producto);
+    return this.http.post<Product>(this.apiUrlInventory, producto);
   }
 
   getAllProductos(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+    return this.http.get<Product[]>(this.apiUrlInventory);
   }
 
+  
+  getProductById(idProduct: number): Observable<Product> {
+    const url = `${this.apiUrlProduct}/${idProduct}/product`;
+    return this.http.get<Product>(url);
+  }
   
 }
 

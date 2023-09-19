@@ -39,3 +39,19 @@
     z-index: 2;
     position: relative;
  }
+
+ a.product-link {
+    text-decoration: none !important; /* Elimina el subrayado */
+    color: inherit; /* Usa el color heredado del elemento contenedor */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar el mouse */
+  
+    /* Puedes agregar otros estilos según tus preferencias */
+  }
+  
+  
+  /* Estilo para los enlaces en la lista de productos cuando se pasa el mouse */
+  a.product-link:hover {
+    text-decoration: none; /* Agrega subrayado al pasar el mouse */
+    color: black; /* Cambia el color al pasar el mouse */
+  }
+  
