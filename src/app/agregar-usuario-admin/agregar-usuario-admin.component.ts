@@ -10,13 +10,13 @@ import { UsuarioService } from '../usuario.service';
 })
 export class AgregarUsuarioAdminComponent implements OnInit{
   usuarios: Usuario[] = [];
-  usuario: Usuario = { cedulaUsuario: 0,
-    nombreUsuario: "",
-    apellidoUsuario: "",
-    emailUsuario: "",
-    constrasenia: "",
-    tipoUsuario: "",
-    telefonoUsuario: ""}; // Inicializa el modelo
+  usuario: Usuario = { idUser: 0,
+    name: "",
+    lastname: "",
+    email: "",
+    password: "",
+    userType: "",
+    phoneNumber: ""}; // Inicializa el modelo
 
   constructor(private usuarioservice: AgregarUsuarioAdminService, private UsuarioServiceListar: UsuarioService) {}
 

@@ -1,18 +1,22 @@
 <br><h1 class="title">Articulos a la venta</h1><br>
 
 
+
+
+
 <div class="row">
     <div *ngFor="let producto of productos" class="col-md-2">
         <div class="card">
-            <img [src]="producto.url_photo" class="card-img-top" alt="{{producto.nombreProducto}}">
+            <img [src]="producto.url_photo" class="card-img-top" alt="{{producto.productName}}">
             <div class="card-body">
-                <h5 class="card-title">{{producto.nombreProducto}}</h5>
-                <p class="card-text">{{producto.descripcionProducto}}</p>
-                <p class="card-text"><strong>Precio: ${{producto.valor}}</strong></p>
-                <p class="card-text"><strong>{{producto.cantidadAVender}}</strong></p>
-               
-                <button class="btn btn-primary">Agregar al carrito</button>
-            </div>
+                <h5 class="card-title">{{producto.productName}}</h5>
+                <p class="card-text">{{producto.productDescription}}</p>
+                <p class="card-text"><strong>Precio: ${{producto.price}}</strong></p>
+                <p class="card-text"><strong>{{producto.quantityToSell}}</strong></p>
+                <a routerLink="/admin" class="stretched-link"></a>
+                <button routerLink="/inventario" class="btn btn-primary">Agregar al carrito</button>
+                
+                </div>
         </div>
     </div>
 </div>       

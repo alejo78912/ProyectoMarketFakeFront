@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Producto } from '../producto.model';
-import { ProductosService } from '../productos.service';
+import { Product } from '../product.model';
+import { ProductosService } from '../product.service';
 
 @Component({
   selector: 'app-agregar-producto-admin',
@@ -9,18 +9,18 @@ import { ProductosService } from '../productos.service';
 })
 export class AgregarProductoAdminComponent {
   
-  Produto: Producto = { 
+  Produto: Product = { 
     
-    codProducto: 0,
-    valor: 0,
+    idProduct: 0,
+    price: 0,
     url_photo: "",
-    cantidadAVender: 0,
-    categoria:{
-      idCategoria: 0,
-      nombreCategoria: ''
+    quantityToSell: 0,
+    category:{
+      idCategory: 0,
+      categoryName: ''
     },
-    nombreProducto: "",
-    descripcionProducto: "",
+    productName: "",
+    productDescription: "",
     }; // Inicializa el modelo
 
   constructor(private productoServicio: ProductosService) {}
@@ -29,16 +29,16 @@ export class AgregarProductoAdminComponent {
    
       this.productoServicio.addproducto(this.Produto).subscribe((data) => {
         // Puedes realizar acciones adicionales aquí, como actualizar la lista de tareas
-        this.Produto.codProducto = 0;
-        this.Produto.valor = 0;
+        this.Produto.idProduct = 0;
+        this.Produto.price = 0;
         this.Produto.url_photo = "";
-        this.Produto.cantidadAVender = 0;
-        this.Produto.categoria = {
-          idCategoria: 0,
-          nombreCategoria: ""
+        this.Produto.quantityToSell = 0;
+        this.Produto.category = {
+          idCategory: 0,
+          categoryName: ""
         };
-        this.Produto.nombreProducto = "";
-        this.Produto.descripcionProducto = "";
+        this.Produto.productName = "";
+        this.Produto.productDescription = "";
         
       });
     }

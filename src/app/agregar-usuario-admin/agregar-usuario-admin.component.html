@@ -3,37 +3,37 @@
 <form class="col-lg-6 offset-lg-2">
     <div class="form-group">
       <label for="exampleInputEmail1">Cedula</label>
-      <input type="text"[(ngModel)]="usuario.cedulaUsuario" name="cedula_usuario" class="form-control" id="" placeholder="Nombre">
+      <input type="text"[(ngModel)]="usuario.idUser" name="cedula_usuario" class="form-control" id="" placeholder="Nombre">
     </div>
   
     <div class="form-group">
       <label for="exampleInputPassword1">Nombre</label>
-      <input type="text"[(ngModel)]="usuario.nombreUsuario" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
+      <input type="text"[(ngModel)]="usuario.name" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
     </div>
   
     <div class="form-group">
       <label for="exampleInputPassword1">Apellidos</label>
-      <input type="text"[(ngModel)]="usuario.apellidoUsuario" name="apellido_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellidos">
+      <input type="text"[(ngModel)]="usuario.lastname" name="apellido_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellidos">
     </div>
   
     <div class="form-group">
       <label for="exampleInputPassword1">Email</label>
-      <input type="text"[(ngModel)]="usuario.emailUsuario" name="email_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
+      <input type="text"[(ngModel)]="usuario.email" name="email_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
     </div>
 
     <div class="form-group">
         <label for="exampleInputPassword1">Contrasena</label>
-        <input type="text"[(ngModel)]="usuario.constrasenia" name="constrasenia" class="form-control" id="exampleInputPassword1" placeholder="Contrasena">
+        <input type="text"[(ngModel)]="usuario.password" name="constrasenia" class="form-control" id="exampleInputPassword1" placeholder="Contrasena">
       </div>
 
       <div class="form-group">
         <label for="exampleInputPassword1">Telefono</label>
-        <input type="text"[(ngModel)]="usuario.telefonoUsuario" name="telefono_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
+        <input type="text"[(ngModel)]="usuario.phoneNumber" name="telefono_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
       </div>
     
       <div class="form-group">
         <label for="exampleInputPassword1">Tipo de usuario</label>
-        <input type="text"[(ngModel)]="usuario.tipoUsuario" name="tipo_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
+        <input type="text"[(ngModel)]="usuario.userType" name="tipo_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email">
       </div>
   
     <br>
@@ -60,13 +60,13 @@
       </thead>
       <tbody>
         <tr *ngFor="let usuario of usuarios">
-          <td>{{usuario.cedulaUsuario}}</td>
-          <td>{{usuario.nombreUsuario}}</td>
-          <td>{{usuario.apellidoUsuario}}</td>
-          <td>{{usuario.emailUsuario}}</td>
-          <td>{{usuario.constrasenia}}</td>
-          <td>{{usuario.tipoUsuario}}</td>
-          <td>{{usuario.telefonoUsuario}}</td>
+          <td>{{usuario.idUser}}</td>
+          <td>{{usuario.name}}</td>
+          <td>{{usuario.lastname}}</td>
+          <td>{{usuario.email}}</td>
+          <td>{{usuario.password}}</td>
+          <td>{{usuario.userType}}</td>
+          <td>{{usuario.phoneNumber}}</td>
         </tr>
       </tbody>
     </table>

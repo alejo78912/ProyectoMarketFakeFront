@@ -1,7 +1,8 @@
 .card {
     width: 380px; /* Ancho deseado de la tarjeta */
-    height: 400px; /* Altura deseada de la tarjeta */
+    height: 480px; /* Altura deseada de la tarjeta */
     margin-bottom: 20px;
+    padding-top: 10px;
     margin-left: 0px;
     margin-right: 5px;
     text-align: center; /* Centra el contenido de la tarjeta horizontalmente */
@@ -33,3 +34,8 @@
     margin-left: 500px;
     
 }
+
+.card .btn {
+    z-index: 2;
+    position: relative;
+ }
