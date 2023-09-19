@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../usuario.model';
+import { User } from '../user.model';
 import { AgregarUsuarioAdminService } from '../agregar-usuario-admin.service';
-import { UsuarioService } from '../usuario.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-agregar-usuario-admin',
@@ -9,8 +9,8 @@ import { UsuarioService } from '../usuario.service';
   styleUrls: ['./agregar-usuario-admin.component.css']
 })
 export class AgregarUsuarioAdminComponent implements OnInit{
-  usuarios: Usuario[] = [];
-  usuario: Usuario = { idUser: 0,
+  usuarios: User[] = [];
+  usuario: User = { idUser: 0,
     name: "",
     lastname: "",
     email: "",
@@ -18,7 +18,7 @@ export class AgregarUsuarioAdminComponent implements OnInit{
     userType: "",
     phoneNumber: ""}; // Inicializa el modelo
 
-  constructor(private usuarioservice: AgregarUsuarioAdminService, private UsuarioServiceListar: UsuarioService) {}
+  constructor(private usuarioservice: AgregarUsuarioAdminService, private UsuarioServiceListar: UserService) {}
 
 
   ngOnInit(): void {

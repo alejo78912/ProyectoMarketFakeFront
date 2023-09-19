@@ -13,7 +13,7 @@ import { InventarioComponent } from './inventario/inventario.component';
 import { VentaComponent } from './venta/venta.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { ProductosService } from './product.service';
+import { ProductsService } from './product.service';
 import { AgregarCategoriaAdminComponent } from './agregar-categoria-admin/agregar-categoria-admin.component';
 import { AgregarUsuarioAdminComponent } from './agregar-usuario-admin/agregar-usuario-admin.component';
 import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-producto-admin.component';

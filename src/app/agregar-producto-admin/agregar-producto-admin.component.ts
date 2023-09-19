@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../product.model';
-import { ProductosService } from '../product.service';
+import { ProductsService } from '../product.service';
 
 @Component({
   selector: 'app-agregar-producto-admin',
@@ -23,7 +23,7 @@ export class AgregarProductoAdminComponent {
     productDescription: "",
     }; // Inicializa el modelo
 
-  constructor(private productoServicio: ProductosService) {}
+  constructor(private productoServicio: ProductsService) {}
 
   addProducto(): void {
    
