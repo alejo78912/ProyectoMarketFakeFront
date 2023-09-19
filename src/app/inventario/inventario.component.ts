@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../product.model';
-import { ProductosService } from '../product.service';
+import { ProductsService } from '../product.service';
 
 @Component({
   selector: 'app-inventario',
@@ -11,7 +11,7 @@ export class InventarioComponent {
 
   productos: Product[] = [];
 
-  constructor(private ProductosService: ProductosService) { }
+  constructor(private ProductsService: ProductsService) { }
 
 
 
@@ -20,7 +20,7 @@ export class InventarioComponent {
   }
 
   getProductos() {
-    this.ProductosService.getAllProductos().subscribe((data) => {
+    this.ProductsService.getAllProductos().subscribe((data) => {
       this.productos = data;
     });
   }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Usuario } from './usuario.model';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { User } from './user.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class AgregarUsuarioAdminService {
 
   constructor(private http: HttpClient) {}
 
-  addUsuario(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(this.apiUrl, usuario);
+  addUsuario(usuario: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, usuario);
   }
 }
