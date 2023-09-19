@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="categoriaSelect">Selecciona una categoría:</label>
+        <select id="categoriaSelect" class="form-select" [(ngModel)]="categoriaSeleccionada" (change)="getProductosByCategoria()">
+          <option *ngFor="let categoria of categorias" [value]="categoria.idCategory">{{ categoria.categoryName }}</option>
+        </select> 
+      </div>
+    </div>
+  </div>
+  
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngIf="productos && productos.length > 0">
+            <div class="row">
+                <div *ngFor="let producto of productos" class="col-md-2">
+                    <div class="card">
+                        <img [src]="producto.url_photo" class="card-img-top" alt="{{producto.productName}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{producto.productName}}</h5>
+                            <p class="card-text">{{producto.productDescription}}</p>
+                            <p class="card-text"><strong>Precio: ${{producto.price}}</strong></p>
+                            <p class="card-text"><strong>{{producto.quantityToSell}}</strong></p>
+                           
+                            <button class="btn btn-primary">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+  

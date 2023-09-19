@@ -26,6 +26,7 @@ import { AgregarUsuarioAdminComponent } from './agregar-usuario-admin/agregar-us
 import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-producto-admin.component';
 import { AgregarCategoriaAdminComponent } from './agregar-categoria-admin/agregar-categoria-admin.component';
 import { NavBarAdminComponent } from './nav-bar-admin/nav-bar-admin.component';
+import { ListByCategoryComponent } from './list-by-category/list-by-category.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { NavBarAdminComponent } from './nav-bar-admin/nav-bar-admin.component';
     AgregarUsuarioAdminComponent,
     AgregarProductoAdminComponent,
     AgregarCategoriaAdminComponent,
-    NavBarAdminComponent
+    NavBarAdminComponent,
+    ListByCategoryComponent,
   ],
   imports: [
     BrowserModule,

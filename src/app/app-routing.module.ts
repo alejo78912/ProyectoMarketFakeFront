@@ -17,12 +17,14 @@ import { ProductosService } from './product.service';
 import { AgregarCategoriaAdminComponent } from './agregar-categoria-admin/agregar-categoria-admin.component';
 import { AgregarUsuarioAdminComponent } from './agregar-usuario-admin/agregar-usuario-admin.component';
 import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-producto-admin.component';
+import { ListByCategoryComponent } from './list-by-category/list-by-category.component';
 
 const routes: Routes = [{path : '', component:ArticulosComponent},
 {path : 'inicio', component:InicioComponent},
 {path: 'carrito', component:CarritoComponent},
 {path: 'articulos', component:ArticulosComponent},
 {path: 'admin', component:AdminComponent},
+{path: 'categorias', component:ListByCategoryComponent},
 {path: 'detalle-producto', component:DetalleProductoComponent},
 {path: 'empleado', component:EmpleadoComponent},
 {path: 'iniciarSesion', component:IniciarSesionComponent},
