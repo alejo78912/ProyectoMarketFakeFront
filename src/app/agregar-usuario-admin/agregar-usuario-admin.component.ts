@@ -18,7 +18,7 @@ export class AgregarUsuarioAdminComponent implements OnInit{
     userType: "",
     phoneNumber: ""}; // Inicializa el modelo
 
-  constructor(private usuarioservice: AgregarUsuarioAdminService, private UsuarioServiceListar: UserService) {}
+  constructor(private AgregarUsuarioAdminService : AgregarUsuarioAdminService, private userService: UserService, private UsuarioServiceListar: UserService) {}
 
 
   ngOnInit(): void {
@@ -28,7 +28,24 @@ export class AgregarUsuarioAdminComponent implements OnInit{
   }
   addUsuario(): void {
    
-      this.usuarioservice.addUsuario(this.usuario).subscribe((data) => {
+      this.AgregarUsuarioAdminService.addUsuario(this.usuario).subscribe((data) => {
+        this.ngOnInit();
+        
+      });
+    }
+
+
+    usuarioUpdate(): void {
+   
+      this.userService.updateUsuario(this.usuario).subscribe((data) => {
+        this.ngOnInit();
+        
+      });
+    }
+
+    usuarioDelete(): void {
+   
+      this.userService.deleteUsuario(this.usuario.idUser).subscribe((data) => {
         this.ngOnInit();
         
       });

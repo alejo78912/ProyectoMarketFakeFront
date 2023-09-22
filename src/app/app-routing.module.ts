@@ -13,11 +13,11 @@ import { InventarioComponent } from './inventario/inventario.component';
 import { VentaComponent } from './venta/venta.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { ProductsService } from './product.service';
 import { AgregarCategoriaAdminComponent } from './agregar-categoria-admin/agregar-categoria-admin.component';
 import { AgregarUsuarioAdminComponent } from './agregar-usuario-admin/agregar-usuario-admin.component';
 import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-producto-admin.component';
 import { ListByCategoryComponent } from './list-by-category/list-by-category.component';
+import { AddSupplierAdminComponent } from './add-supplier-admin/add-supplier-admin.component';
 
 const routes: Routes = [{path : '', component:ArticulosComponent},
 {path : 'inicio', component:InicioComponent},
@@ -36,7 +36,8 @@ const routes: Routes = [{path : '', component:ArticulosComponent},
 {path: 'contacto', component:ContactoComponent},
 {path: 'agregarCategoria', component:AgregarCategoriaAdminComponent},
 {path: 'agregarusuarioAdmin', component:AgregarUsuarioAdminComponent},
-{path: 'agregarProducto', component:AgregarProductoAdminComponent}]
+{path: 'agregarProducto', component:AgregarProductoAdminComponent},
+{path: 'addSupplier', component:AddSupplierAdminComponent}]
 ;
 
 @NgModule({

@@ -27,6 +27,15 @@ export class CategoriaService {
     return this.http.get(url);
   }
 
+  updateCategory(category: Category): Observable<Category> {
+    const url = `${this.apiUrl}/${category.idCategory}/update`; 
+    return this.http.put<Category>(url, category);
+    }
+    deleteCategory(idCategory: number): Observable<void> {
+    const url = `${this.apiUrl}/${idCategory}/delete`;
+    return this.http.delete<void>(url);
+  }
+
 
 
 }

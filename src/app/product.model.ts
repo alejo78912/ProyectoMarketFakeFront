@@ -1,4 +1,5 @@
 import { Category } from './category.model';
+import { Supplier } from './supplier.model';
 
 export class Product {
   idProduct: number;
@@ -8,6 +9,7 @@ export class Product {
   category: Category;
   productName: string;
   productDescription: string;
+  supplier: Supplier;
 
   constructor(
     idProduct: number,
@@ -15,6 +17,7 @@ export class Product {
     url_photo: string,
     quantityToSell: number,
     category: Category,
+    supplier: Supplier,
     productName: string,
     productDescription: string
   ) {
@@ -23,6 +26,7 @@ export class Product {
     this.url_photo = url_photo;
     this.quantityToSell = quantityToSell;
     this.category = category;
+    this.supplier = supplier
     this.productName = productName;
     this.productDescription = productDescription;
   }

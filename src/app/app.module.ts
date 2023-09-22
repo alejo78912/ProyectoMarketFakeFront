@@ -27,6 +27,13 @@ import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-
 import { AgregarCategoriaAdminComponent } from './agregar-categoria-admin/agregar-categoria-admin.component';
 import { NavBarAdminComponent } from './nav-bar-admin/nav-bar-admin.component';
 import { ListByCategoryComponent } from './list-by-category/list-by-category.component';
+import { AddSupplierAdminComponent } from './add-supplier-admin/add-supplier-admin.component';
+import { CategoriaDialogComponentComponent } from './categoria-dialog-component/categoria-dialog-component.component';
+import { ProductDialogComponentComponent } from './product-dialog-component/product-dialog-component.component';
+import { UserDialogComponentComponent } from './user-dialog-component/user-dialog-component.component';
+import { SupplierDialogComponentComponent } from './supplier-dialog-component/supplier-dialog-component.component';
+import { MatDialogModule  } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -53,6 +60,11 @@ import { ListByCategoryComponent } from './list-by-category/list-by-category.com
     AgregarCategoriaAdminComponent,
     NavBarAdminComponent,
     ListByCategoryComponent,
+    AddSupplierAdminComponent,
+    CategoriaDialogComponentComponent,
+    ProductDialogComponentComponent,
+    UserDialogComponentComponent,
+    SupplierDialogComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +72,9 @@ import { ListByCategoryComponent } from './list-by-category/list-by-category.com
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatDialogModule,
+    MatFormFieldModule,
+
   ],
   providers: [ IniciarSesionService,
                 UsuarioComponent ],

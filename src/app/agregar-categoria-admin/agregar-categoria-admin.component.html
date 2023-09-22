@@ -10,7 +10,11 @@
       <input type="text"[(ngModel)]="categoria.categoryName" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
     </div>
     <br>
-    <button class="btn btn-primary" (click)="addCategoria()">Submit</button>
+    <div class="row">
+      <div class="col"><button class="btn btn-primary" (click)="addCategoria()">Submit</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="categoryUpdate()">Update</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="categoryDelete()">Delete</button></div>
+    </div>
     <br>
     <br>
 </form>
