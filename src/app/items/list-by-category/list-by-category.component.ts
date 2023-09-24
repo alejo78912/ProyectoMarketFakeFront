@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CategoriasListarService } from '../categorias-listar.service';
-import { CategoriaService } from '../category.service';
-import { Product } from '../product.model';
-import { Category} from '../category.model';
+import { CategoriasListarService } from '../../categorias-listar.service';
+import { CategoriaService } from '../../category.service';
+import { Product } from '../../product.model';
+import { Category} from '../../category.model';
 
 @Component({
   selector: 'app-list-by-category',

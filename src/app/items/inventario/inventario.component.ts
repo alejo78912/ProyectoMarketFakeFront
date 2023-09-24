@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Product } from '../product.model';
-import { ProductsService } from '../product.service';
+import { Product } from '../../product.model';
+import { ProductsService } from '../../product.service';
 
 @Component({
   selector: 'app-inventario',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user.model';
-import { AgregarUsuarioAdminService } from '../agregar-usuario-admin.service';
-import { UserService } from '../user.service';
+import { User } from '../../user.model';
+import { AgregarUsuarioAdminService } from '../../agregar-usuario-admin.service';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-agregar-usuario-admin',

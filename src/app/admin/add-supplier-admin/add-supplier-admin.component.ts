@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Supplier } from '../supplier.model';
-import { SupplierServiceService } from '../supplier-service.service';
+import { Supplier } from '../../supplier.model';
+import { SupplierServiceService } from '../../supplier-service.service';
 
 @Component({
   selector: 'app-add-supplier-admin',

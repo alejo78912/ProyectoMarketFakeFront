@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../category.model';
-import { CategoriaService } from '../category.service';
+import { Category } from '../../category.model';
+import { CategoriaService } from '../../category.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { CategoriaDialogComponentComponent } from '../categoria-dialog-component/categoria-dialog-component.component'; // Asegúrate de crear este componente
+import { CategoriaDialogComponentComponent } from '../../items/categoria-dialog-component/categoria-dialog-component.component'; // Asegúrate de crear este componente
 @Component({
   selector: 'app-agregar-categoria-admin',
   templateUrl: './agregar-categoria-admin.component.html',

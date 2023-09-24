@@ -2,28 +2,32 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { CarritoComponent } from './carrito/carrito.component';
-import { ArticulosComponent } from './articulos/articulos.component';
+import { ItemsComponent } from './items/items.component';
 import { AdminComponent } from './admin/admin.component';
-import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { DetalleProductoComponent } from './items/detalle-producto/detalle-producto.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { IniciarSesionComponent } from './inciar-sesion/inciar-sesion.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { InformeComponent } from './informe/informe.component';
-import { InventarioComponent } from './inventario/inventario.component';
+import { InventarioComponent } from './items/inventario/inventario.component';
 import { VentaComponent } from './venta/venta.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { AgregarCategoriaAdminComponent } from './agregar-categoria-admin/agregar-categoria-admin.component';
-import { AgregarUsuarioAdminComponent } from './agregar-usuario-admin/agregar-usuario-admin.component';
-import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-producto-admin.component';
-import { ListByCategoryComponent } from './list-by-category/list-by-category.component';
-import { AddSupplierAdminComponent } from './add-supplier-admin/add-supplier-admin.component';
+import { AgregarCategoriaAdminComponent } from './admin/agregar-categoria-admin/agregar-categoria-admin.component';
+import { AgregarUsuarioAdminComponent } from './admin/agregar-usuario-admin/agregar-usuario-admin.component';
+import { AgregarProductoAdminComponent } from './admin/agregar-producto-admin/agregar-producto-admin.component';
+import { ListByCategoryComponent } from './items/list-by-category/list-by-category.component';
+import { AddSupplierAdminComponent } from './admin/add-supplier-admin/add-supplier-admin.component';
+import { AdminModule } from './admin/admin.module';
 
-const routes: Routes = [{path : '', component:ArticulosComponent},
-{path : 'inicio', component:InicioComponent},
+const routes: Routes = [{path : '', component:ItemsComponent},
+
+{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+
+
+{path: 'inicio', component:InicioComponent},
 {path: 'carrito', component:CarritoComponent},
-{path: 'articulos', component:ArticulosComponent},
-{path: 'admin', component:AdminComponent},
+{path: 'articulos', component:ItemsComponent},
 {path: 'categorias', component:ListByCategoryComponent},
 {path: 'detalle-producto/:idProduct', component:DetalleProductoComponent},
 {path: 'empleado', component:EmpleadoComponent},
