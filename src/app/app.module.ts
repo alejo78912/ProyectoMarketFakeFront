@@ -45,17 +45,14 @@ import { ItemsModule } from './items/items.module';
     FooterComponent,
     IniciarSesionComponent,
     UsuarioComponent,
-
     EmpleadoComponent,
     CarritoComponent,
     InformeComponent,
     VentaComponent,
-
     InicioComponent,
     NavbarComponent,
     RegistrarseComponent,
     ContactoComponent,
-
     ProductDialogComponentComponent,
     UserDialogComponentComponent,
     SupplierDialogComponentComponent,

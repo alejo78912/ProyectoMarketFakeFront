@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../../product.model';
 import { ProductsService } from '../../product.service';
+import { SwalUtils } from 'src/app/utils/swal-utils';
 
 @Component({
   selector: 'app-agregar-producto-admin',
@@ -49,6 +50,9 @@ export class AgregarProductoAdminComponent {
         this.Produto.productDescription = "";
         
       });
+
+      SwalUtils.customMessageOk('Articulo Agregado','Inventario actualizado'); 
+
     }
 
   vaciarCampos():void{
@@ -83,6 +87,9 @@ export class AgregarProductoAdminComponent {
       this.vaciarCampos();
         
       });
+
+      SwalUtils.customMessageOk('aProducto Editado','Base de datos actualizada'); 
+
     }
 
     ProductDelete(): void {
@@ -91,5 +98,8 @@ export class AgregarProductoAdminComponent {
       this.vaciarCampos();
         
       });
+
+      SwalUtils.customMessageOk('Producto Eliminado','Base de datos actualizada'); 
+
     }
 }

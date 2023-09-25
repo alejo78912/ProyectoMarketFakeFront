@@ -3,6 +3,7 @@ import { Category } from '../../category.model';
 import { CategoriaService } from '../../category.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CategoriaDialogComponentComponent } from '../../items/categoria-dialog-component/categoria-dialog-component.component'; // Asegúrate de crear este componente
+import { SwalUtils } from 'src/app/utils/swal-utils';
 @Component({
   selector: 'app-agregar-categoria-admin',
   templateUrl: './agregar-categoria-admin.component.html',
@@ -24,6 +25,9 @@ export class AgregarCategoriaAdminComponent implements OnInit{
         this.categoria.categoryName="";
         
       });
+
+      SwalUtils.customMessageOk('Categoria Agregada','Base de datos actualizada');
+
     }
 
     ngOnInit(): void {
@@ -39,6 +43,9 @@ export class AgregarCategoriaAdminComponent implements OnInit{
         this.ngOnInit();
         
       });
+
+      SwalUtils.customMessageOk('Categoria Editado','Base de datos actualizada') ;
+
     }
 
     categoryDelete(): void {
@@ -47,6 +54,9 @@ export class AgregarCategoriaAdminComponent implements OnInit{
         this.ngOnInit();
         
       });
+
+      SwalUtils.customMessageOk('Categoria Eliminada','Base de datos actualizada') ;
+
     }
 
     openCategoriaDialog(): void {
@@ -65,6 +75,15 @@ export class AgregarCategoriaAdminComponent implements OnInit{
           console.log('ID de categoría ingresado:', result);
         }
       });
+    }
+
+    vaciarCampos():void{
+
+      this.categoria.categoryName= "";
+      this.categoria.idCategory= 0;
+      
+      
+    
     }
   
    

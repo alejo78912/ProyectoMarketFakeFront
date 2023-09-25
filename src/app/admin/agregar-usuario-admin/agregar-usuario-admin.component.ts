@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../user.model';
 import { AgregarUsuarioAdminService } from '../../agregar-usuario-admin.service';
 import { UserService } from '../../user.service';
+import { SwalUtils } from 'src/app/utils/swal-utils';
 
 @Component({
   selector: 'app-agregar-usuario-admin',
@@ -32,6 +33,11 @@ export class AgregarUsuarioAdminComponent implements OnInit{
         this.ngOnInit();
         
       });
+
+      this.vaciarCampos();
+
+      SwalUtils.customMessageOk('Usuario Registrado Exitosamente','Base de datos actualizada!'); 
+
     }
 
 
@@ -40,7 +46,11 @@ export class AgregarUsuarioAdminComponent implements OnInit{
       this.userService.updateUsuario(this.usuario).subscribe((data) => {
         this.ngOnInit();
         
+        
       });
+
+      SwalUtils.customMessageOk('Usuario Editado','Base de datos actualizada') 
+
     }
 
     usuarioDelete(): void {
@@ -49,6 +59,22 @@ export class AgregarUsuarioAdminComponent implements OnInit{
         this.ngOnInit();
         
       });
+
+      SwalUtils.customMessageOk('Usuario Eliminado','Base de datos actualizada'); 
+
+    }
+
+    vaciarCampos():void{
+
+      this.usuario.idUser= 0,
+      this.usuario.name= "",
+      this.usuario.lastname= "",
+      this.usuario.email= "",
+      this.usuario.password= "",
+      this.usuario.userType= "",
+      this.usuario.phoneNumber= ""
+      
+    
     }
 
     

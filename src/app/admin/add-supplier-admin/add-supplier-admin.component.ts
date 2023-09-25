@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Supplier } from '../../supplier.model';
 import { SupplierServiceService } from '../../supplier-service.service';
+import { SwalUtils } from 'src/app/utils/swal-utils';
 
 @Component({
   selector: 'app-add-supplier-admin',
@@ -31,6 +32,9 @@ export class AddSupplierAdminComponent implements OnInit{
         this.ngOnInit();
         
       });
+
+      SwalUtils.customMessageOk('Proveedor Agregado','Base de datos actualizada') 
+      
     }
 
 
@@ -40,6 +44,9 @@ export class AddSupplierAdminComponent implements OnInit{
         this.ngOnInit();
         
       });
+
+      SwalUtils.customMessageOk('Proveedor Editado','Base de datos actualizada') 
+
     }
 
     supplierDelete(): void {
@@ -48,6 +55,9 @@ export class AddSupplierAdminComponent implements OnInit{
         this.ngOnInit();
         
       });
+
+      SwalUtils.customMessageOk('Proveedor Eliminado','Base de datos actualizada') 
+
     }
 
 }
