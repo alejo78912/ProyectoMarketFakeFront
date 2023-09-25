@@ -33,7 +33,7 @@ export class AddSupplierAdminComponent implements OnInit{
         
       });
 
-      SwalUtils.customMessageOk('Proveedor Agregado','Base de datos actualizada') 
+      SwalUtils.customMessageOk('Proveedor Agregado','Base de datos actualizada'); 
       
     }
 
@@ -45,7 +45,7 @@ export class AddSupplierAdminComponent implements OnInit{
         
       });
 
-      SwalUtils.customMessageOk('Proveedor Editado','Base de datos actualizada') 
+      SwalUtils.customMessageOk('Proveedor Editado','Base de datos actualizada'); 
 
     }
 
@@ -56,7 +56,7 @@ export class AddSupplierAdminComponent implements OnInit{
         
       });
 
-      SwalUtils.customMessageOk('Proveedor Eliminado','Base de datos actualizada') 
+      SwalUtils.customMessageOk('Proveedor Eliminado','Base de datos actualizada'); 
 
     }
 
