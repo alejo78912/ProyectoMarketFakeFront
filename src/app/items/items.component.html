@@ -1,36 +1,20 @@
-<br><h1 class="title">Articulos a la venta</h1><br>
+<br>
+<h1 class="title">Articulos a la venta</h1><br>
 
 <div class="row">
-   
     <div *ngFor="let producto of productos" class="col-md-2">
-        <a [routerLink]="'/detalle-producto/'+ producto.idProduct" >
-        <div class="card">
+        <div class="card" [routerLink]="'/detalle-producto/'+ producto.idProduct">
             <img [src]="producto.url_photo" class="card-img-top" alt="{{producto.productName}}">
             <div class="card-body">
-              
                 <h5 class="card-title">{{producto.productName}}</h5>
-                <p class="card-text"><strong>Descripción:{{producto.productDescription}}</strong></p>
+                <p class="card-text"><strong>Descripción: {{producto.productDescription}}</strong></p>
                 <p class="card-text"><strong>Precio: ${{producto.price}}</strong></p>
-                <p class="card-text"><strong>Cantidad: {{producto.quantityToSell}}</strong></p>
-             
-                
-                
-                </div>
-
-               
+                <p class="card-text"><strong>Cantidad Disponible: {{producto.quantityToSell}}</strong></p>
+                <br>
+                <button class="btn btn-primary" (click)="agregarProductoAlCarrito(producto.idProduct); $event.stopPropagation();">Agregar al carrito</button>
+            </div>
         </div>
-        </a>  
-        <button class="btn btn-primary" (click)="agregarProductoAlCarrito(producto.idProduct)">Agregar al carrito</button> 
     </div>
-</div>  
-   
+</div>
 
 
-
-   
-
-    
-
-        
-        
-        

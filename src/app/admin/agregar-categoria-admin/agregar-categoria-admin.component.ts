@@ -21,7 +21,7 @@ export class AgregarCategoriaAdminComponent implements OnInit{
   constructor(private CategoriaServicio: CategoriaService, private CategoriaListarService: CategoriasListarService) {}
 
   addCategoria(): void {
-   
+      
       this.CategoriaServicio.addCategoria(this.categoria).subscribe((data) => {
         this.ngOnInit();
         this.categoria.categoryName="";

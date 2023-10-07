@@ -6,16 +6,13 @@
         </div>
         <br>
         <br>
-        <a routerLink="/inventario" href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Inventario</span></a
-        >
-        <a routerLink="/admin" href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Administrador</span></a
-        >
-        <a routerLink="/" href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Categoria 4</span></a
-        >
         
+        <div>CATEGORIAS</div>
+        <ng-container *ngFor="let categoria of categorias">
+        <a [routerLink]="" href="#" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-line fa-fw me-3"></i><span>{{ categoria.categoryName}}</span>
+        </a>
+      </ng-container>
         
       </div>
     </div>

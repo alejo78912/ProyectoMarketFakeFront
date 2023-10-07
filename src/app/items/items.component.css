@@ -1,7 +1,9 @@
+
+
 .card {
     width: 380px; /* Ancho deseado de la tarjeta */
     height: 480px; /* Altura deseada de la tarjeta */
-    margin-bottom: 20px;
+    margin-bottom: 120px;
     padding-top: 10px;
     margin-left: 0px;
     margin-right: 5px;
@@ -18,10 +20,11 @@
 
 /* Ajusta el tamaño de las imágenes de las tarjetas */
 .card-img-top {
-    width: 160px; /* Ancho deseado de la imagen */
-    height: 200px; /* Altura deseada de la imagen */
+    object-fit: contain;
+    width: 100%; /* Ancho deseado de la imagen */
+    height: 250px; /* Altura deseada de la imagen */
     display: block; /* Centra la imagen horizontalmente en su contenedor */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    margin: -10px auto; /* Centra la imagen horizontalmente */
     
 }
 

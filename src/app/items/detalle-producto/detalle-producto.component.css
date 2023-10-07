@@ -37,4 +37,11 @@
     font-size: 18px; /* Tamaño de fuente más grande para el precio */
     color: #007BFF; /* Color del precio */
   }
+
+  .mainImg{
+    object-fit: contain;
+    width: 100%; /* Ancho deseado de la imagen */
+    height: 550px; /* Altura deseada de la imagen */
+    display: block; /* Centra la imagen horizontalmente en su contenedor */
+  }
   

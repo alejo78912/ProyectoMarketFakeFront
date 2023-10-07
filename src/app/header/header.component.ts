@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Category } from '../category.model';
+import { ActivatedRoute } from '@angular/router';
+import { CategoriaService } from '../category.service';
+
 
 @Component({
   selector: 'app-header',
@@ -7,6 +11,24 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  url="https://t3.ftcdn.net/jpg/05/36/46/64/360_F_536466456_ROneSNBzDA10yJfMQkLFsq9412N8yCiG.jpg"
+  url="https://icon-library.com/images/retailer-icon/retailer-icon-8.jpg"
+  LOGO = "https://icon-library.com/images/cart-icon-png-white/cart-icon-png-white-24.jpg";
+
+  categorias: Category[] =[];
+
+  constructor(private route: ActivatedRoute,private categoriaService : CategoriaService) { }
+
+  ngOnInit(): void {
+    
+    this.getCategorias();
+}
+
+  getCategorias() {
+   
+    this.categoriaService.categorias().subscribe(data => {
+      this.categorias = data;
+
+  });
+  }
 
 }
