@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Supplier } from '../../supplier.model';
 import { SupplierServiceService } from '../../supplier-service.service';
 import { SwalUtils } from 'src/app/utils/swal-utils';
+import { Product } from 'src/app/product.model';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-add-supplier-admin',
@@ -26,6 +28,13 @@ export class AddSupplierAdminComponent implements OnInit{
       this.supplier.urlSupplier=""
     });
   }
+
+  checkProductsInSupplier(idSupplier: number): Observable<boolean> {
+    return this.supplierService.getProductosBySupplier(idSupplier).pipe(
+      map((products: Product[]) => products.length > 0) // Devuelve true si hay productos, false si no los hay
+    );
+  }
+  
   addSupplier(): void {
    
       this.supplierService.addSupplier(this.supplier).subscribe((data) => {
@@ -50,14 +59,28 @@ export class AddSupplierAdminComponent implements OnInit{
     }
 
     supplierDelete(): void {
-   
-      this.supplierService.deleteSupplier(this.supplier.idSupplier).subscribe((data) => {
-        this.ngOnInit();
-        
-      });
-
-      SwalUtils.customMessageOk('Proveedor Eliminado','Base de datos actualizada'); 
-
+      this.checkProductsInSupplier(this.supplier.idSupplier).subscribe(
+        hasProducts => {
+          if (hasProducts) {
+            SwalUtils.customMessageError('No se puede eliminar', 'El proveedor tiene productos asociados.');
+          } else {
+            this.supplierService.deleteSupplier(this.supplier.idSupplier).subscribe(
+              (data) => {
+                this.ngOnInit(); // Esto es opcional, dependiendo de cómo quieras manejar la actualización de la lista de proveedores.
+    
+                SwalUtils.customMessageOk('Proveedor Eliminado', 'Base de datos actualizada');
+              },
+              error => {
+                SwalUtils.customMessageError('No se puede borrar el proveedor', 'revisa si tienes articulos de este proveedor');
+              }
+            );
+          }
+        },
+        error => {
+          console.error('Error al verificar productos en el proveedor', error);
+          // Maneja errores si es necesario
+        }
+      );
     }
 
 }

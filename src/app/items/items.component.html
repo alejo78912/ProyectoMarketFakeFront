@@ -13,11 +13,14 @@
                 <p class="card-text"><strong>Precio: ${{producto.price}}</strong></p>
                 <p class="card-text"><strong>Cantidad: {{producto.quantityToSell}}</strong></p>
              
-                <button class="btn btn-primary">Agregar al carrito</button>
+                
                 
                 </div>
+
+               
         </div>
         </a>  
+        <button class="btn btn-primary" (click)="agregarProductoAlCarrito(producto.idProduct)">Agregar al carrito</button> 
     </div>
 </div>  
    

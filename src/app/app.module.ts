@@ -13,7 +13,6 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { InventarioComponent } from './items/inventario/inventario.component';
 import { AdminComponent } from './admin/admin.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
-import { CarritoComponent } from './carrito/carrito.component';
 import { InformeComponent } from './informe/informe.component';
 import { VentaComponent } from './venta/venta.component';
 import { DetalleProductoComponent } from './items/detalle-producto/detalle-producto.component';
@@ -28,15 +27,14 @@ import { AgregarCategoriaAdminComponent } from './admin/agregar-categoria-admin/
 import { NavBarAdminComponent } from './admin/nav-bar-admin/nav-bar-admin.component';
 import { ListByCategoryComponent } from './items/list-by-category/list-by-category.component';
 import { AddSupplierAdminComponent } from './admin/add-supplier-admin/add-supplier-admin.component';
-import { CategoriaDialogComponentComponent } from './items/categoria-dialog-component/categoria-dialog-component.component';
 import { ProductDialogComponentComponent } from './product-dialog-component/product-dialog-component.component';
 import { UserDialogComponentComponent } from './user-dialog-component/user-dialog-component.component';
 import { SupplierDialogComponentComponent } from './supplier-dialog-component/supplier-dialog-component.component';
-import { MatDialogModule  } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './admin/admin.module';
 import { ItemsModule } from './items/items.module';
+import { CartModule } from './cart/cart.module';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +44,6 @@ import { ItemsModule } from './items/items.module';
     IniciarSesionComponent,
     UsuarioComponent,
     EmpleadoComponent,
-    CarritoComponent,
     InformeComponent,
     VentaComponent,
     InicioComponent,
@@ -56,6 +53,7 @@ import { ItemsModule } from './items/items.module';
     ProductDialogComponentComponent,
     UserDialogComponentComponent,
     SupplierDialogComponentComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -63,13 +61,10 @@ import { ItemsModule } from './items/items.module';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MatDialogModule,
-    MatFormFieldModule,
     BrowserAnimationsModule,
     AdminModule,
-    ItemsModule
-
-
+    ItemsModule,
+    CartModule
   ],
   providers: [ IniciarSesionService,
                 UsuarioComponent ],

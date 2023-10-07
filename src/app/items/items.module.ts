@@ -7,9 +7,6 @@ import { ArticulosMasVendidosComponent } from './articulos-mas-vendidos/articulo
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 import { ListByCategoryComponent } from './list-by-category/list-by-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CategoriaDialogComponentComponent } from './categoria-dialog-component/categoria-dialog-component.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { InventarioComponent } from './inventario/inventario.component';
 
 
@@ -19,7 +16,6 @@ import { InventarioComponent } from './inventario/inventario.component';
     ArticulosMasVendidosComponent,
     DetalleProductoComponent,
     ListByCategoryComponent,
-    CategoriaDialogComponentComponent,
     InventarioComponent
   ],
   imports: [
@@ -27,16 +23,12 @@ import { InventarioComponent } from './inventario/inventario.component';
     ItemsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
-    MatDialogModule,
-    MatFormFieldModule,
   ],
   exports : [
     ItemsComponent,
     ArticulosMasVendidosComponent,
     DetalleProductoComponent,
     ListByCategoryComponent,
-    CategoriaDialogComponentComponent,
     InventarioComponent
   ]
 })

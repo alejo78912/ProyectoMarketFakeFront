@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from '../../product.model';
 import { ProductsService } from '../../product.service';
 import { SwalUtils } from 'src/app/utils/swal-utils';
+import { CartService } from 'src/app/cart/cart.service';
 
 @Component({
   selector: 'app-agregar-producto-admin',
@@ -32,10 +33,19 @@ export class AgregarProductoAdminComponent {
     productDescription: "",
     }; // Inicializa el modelo
 
-  constructor(private productoServicio: ProductsService) {}
+  constructor(private productoServicio: ProductsService, private cartService: CartService) {}
+
 
   addProduct(): void {
+    if (this.Produto.price <= 0 || this.Produto.quantityToSell <= 0) {
+      // Mostrar mensaje de error si el precio o la cantidad son negativos o cero
+      SwalUtils.customMessageError('Error', 'El precio y la cantidad deben ser mayores que cero.');
+      return; // No continuar con la operación si los valores son inválidos
+    }
+  
+    // Continuar con la lógica para agregar el producto solo si los valores son válidos
    
+      
       this.productoServicio.addProduct(this.Produto).subscribe((data) => {
         // Puedes realizar acciones adicionales aquí, como actualizar la lista de tareas
         this.Produto.idProduct = 0;
@@ -50,10 +60,13 @@ export class AgregarProductoAdminComponent {
         this.Produto.productDescription = "";
         
       });
-
-      SwalUtils.customMessageOk('Articulo Agregado','Inventario actualizado'); 
-
-    }
+      this.vaciarCampos();
+   
+  
+    SwalUtils.customMessageOk('Articulo Agregado', 'Inventario actualizado');
+  }
+  
+  
 
   vaciarCampos():void{
 
@@ -82,8 +95,29 @@ export class AgregarProductoAdminComponent {
 
     
     ProductUpdate(): void {
+      if (this.Produto.price <= 0 || this.Produto.quantityToSell <= 0) {
+      // Mostrar mensaje de error si el precio o la cantidad son negativos o cero
+      SwalUtils.customMessageError('Error', 'El precio y la cantidad deben ser mayores que cero.');
+      return; // No continuar con la operación si los valores son inválidos
+    }
    
-      this.productoServicio.updateProduct(this.Produto).subscribe((data) => {
+      this.productoServicio.actualizarProducto(this.Produto.idProduct, this.Produto).subscribe((data) => {
+      this.vaciarCampos();
+        
+      });
+
+      SwalUtils.customMessageOk('aProducto Editado','Base de datos actualizada'); 
+
+    }
+
+    ProductCartUpdate(): void {
+      if (this.Produto.price <= 0 || this.Produto.quantityToSell <= 0) {
+        // Mostrar mensaje de error si el precio o la cantidad son negativos o cero
+        SwalUtils.customMessageError('Error', 'El precio y la cantidad deben ser mayores que cero.');
+        return; // No continuar con la operación si los valores son inválidos
+      }
+   
+      this.cartService.actualizarProductoEnCarrito(this.Produto.idProduct, this.Produto).subscribe((data) => {
       this.vaciarCampos();
         
       });
@@ -95,11 +129,36 @@ export class AgregarProductoAdminComponent {
     ProductDelete(): void {
    
       this.productoServicio.deleteProduct(this.Produto.idProduct).subscribe((data) => {
-      this.vaciarCampos();
+        
+        this.vaciarCampos();
         
       });
 
       SwalUtils.customMessageOk('Producto Eliminado','Base de datos actualizada'); 
 
+    }
+
+    ProductDeleteCart(): void{
+
+      this.cartService.deleteCarrito(this.Produto.idProduct).subscribe((data) => {
+        
+        SwalUtils.customMessageOk('Producto Eliminado','Base de datos actualizada'); 
+        this.vaciarCampos();
+
+      });
+
+    }
+
+    borar(){
+
+    
+      this.ProductDeleteCart();
+      this.ProductDelete();
+
+    }
+
+    edit(){
+      this.ProductCartUpdate();
+      this.ProductUpdate();
     }
 }

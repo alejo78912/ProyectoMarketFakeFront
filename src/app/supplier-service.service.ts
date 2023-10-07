@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Supplier } from './supplier.model';
+import { Product } from './product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,17 @@ export class SupplierServiceService {
     const url = `${this.apiUrl}/${supplier.idSupplier}/update`; 
     return this.http.put<Supplier>(url, supplier);
     }
-    deleteSupplier(idSupplier: number): Observable<void> {
+  
+  deleteSupplier(idSupplier: number): Observable<void> {
     const url = `${this.apiUrl}/${idSupplier}/delete`;
     return this.http.delete<void>(url);
   }
+
+  
+  getProductosBySupplier(idSupplier: number): Observable<Product[]> {
+    const url = `${this.apiUrl}/${idSupplier}/products`;
+    return this.http.get<Product[]>(url);
+  }
+
 
 }

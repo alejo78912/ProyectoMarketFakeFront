@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ... Tus meta tags y otros elementos head ... -->
+  <!-- Agrega el enlace al archivo CSS de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-l0HqnXFWSl/2l5zO3ldM2gV6Tc50PWBp3C/ure2+jEoVk/0Rs5Bk6k9p/hJz6Tl" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1>Carrito de Compras</h1>
+    <div class="row mt-4">
+      <div class="col-md-8">
+        <!-- Lista de productos en el carrito -->
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let product of products">
+            <div class="row">
+              <div class="col-md-3">
+                <!-- Mostrar la imagen del producto -->
+                <img [src]="product.url_photo" alt="{{ product.productName }}" class="img-fluid">
+              </div>
+              <div class="col-md-6">
+                <p class="invisible-paragraph"[(ngModel)]="product.idProduct">{{ product.idProduct }}</p>
+
+                <h4>{{ product.productName }}</h4>
+                <p><strong>Precio:</strong> {{ product.price }} $</p>
+                <label for="quantity">Cantidad:</label>
+                <select (ngModel)="product.quantityToSell" class="form-control" [disabled]="!isEditable">
+                  <option *ngFor="let i of getQuantityOptions(product.quantityToSell)" [value]="i" [attr.selected]="i === 1 ? true : null">{{ i }}</option>
+                </select>
+                
+                
+                
+
+              </div>
+              <div class="col-md-3">
+                <!-- Botón para agregar al carrito -->
+           
+              </div>
+            </div>
+           
+          </li>
+        </ul>
+      </div>
+      <!-- ... Resto de tu código ... -->
+    </div>
+  </div>
+
+  <!-- ... Tu enlace al archivo JavaScript de Bootstrap ... -->
+</body>
+
+</html>

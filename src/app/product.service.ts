@@ -32,12 +32,12 @@ export class ProductsService {
     return this.http.get<Product>(url);
   }
 
-  updateProduct(product: Product): Observable<Product> {
-    const url = `${this.apiUrlProduct}/${product.idProduct}/update`; 
-    return this.http.put<Product>(url, product);
-    }
+  actualizarProducto(idProducto: number, productoActualizado: Product): Observable<void> {
+    const url = `${this.apiUrlInventory}/${idProducto}/update`;
+    return this.http.put<void>(url, productoActualizado);
+  }
     deleteProduct(idProduct: number): Observable<void> {
-    const url = `${this.apiUrlProduct}/${idProduct}/delete`;
+    const url = `${this.apiUrlInventory}/${idProduct}/delete`;
     return this.http.delete<void>(url);
   }
   

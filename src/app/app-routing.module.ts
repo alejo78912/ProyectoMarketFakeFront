@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
-import { CarritoComponent } from './carrito/carrito.component';
 import { ItemsComponent } from './items/items.component';
 import { AdminComponent } from './admin/admin.component';
 import { DetalleProductoComponent } from './items/detalle-producto/detalle-producto.component';
@@ -19,6 +18,7 @@ import { AgregarProductoAdminComponent } from './admin/agregar-producto-admin/ag
 import { ListByCategoryComponent } from './items/list-by-category/list-by-category.component';
 import { AddSupplierAdminComponent } from './admin/add-supplier-admin/add-supplier-admin.component';
 import { AdminModule } from './admin/admin.module';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [{path : '', component:ItemsComponent},
 
@@ -26,7 +26,6 @@ const routes: Routes = [{path : '', component:ItemsComponent},
 
 
 {path: 'inicio', component:InicioComponent},
-{path: 'carrito', component:CarritoComponent},
 {path: 'articulos', component:ItemsComponent},
 {path: 'categorias', component:ListByCategoryComponent},
 {path: 'detalle-producto/:idProduct', component:DetalleProductoComponent},
@@ -41,7 +40,8 @@ const routes: Routes = [{path : '', component:ItemsComponent},
 {path: 'agregarCategoria', component:AgregarCategoriaAdminComponent},
 {path: 'agregarusuarioAdmin', component:AgregarUsuarioAdminComponent},
 {path: 'agregarProducto', component:AgregarProductoAdminComponent},
-{path: 'addSupplier', component:AddSupplierAdminComponent}]
+{path: 'addSupplier', component:AddSupplierAdminComponent},
+{path: 'cart', component:CartComponent}]
 ;
 
 @NgModule({

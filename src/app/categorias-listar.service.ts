@@ -15,4 +15,6 @@ export class CategoriasListarService {
     const url = `${this.apiUrl}/${idCategoria}/products`;
     return this.http.get<Product[]>(url);
   }
+
+  
 }
