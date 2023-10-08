@@ -44,4 +44,12 @@
     height: 550px; /* Altura deseada de la imagen */
     display: block; /* Centra la imagen horizontalmente en su contenedor */
   }
+
+  .miniImg{
+    margin: 10px;
+  }
+
+  .btn{
+    margin: 5px;
+  }
   

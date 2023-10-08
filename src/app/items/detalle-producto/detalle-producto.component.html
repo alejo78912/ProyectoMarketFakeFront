@@ -10,19 +10,19 @@
         </div>
         <div class="d-flex justify-content-center mb-3">
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
+            <img width="60" height="60" class="miniImg rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
+            <img width="60" height="60" class="miniImg rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
+            <img width="60" height="60" class="miniImg rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" class="item-thumb">
-            <img width="60" height="60" class="rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
+            <img width="60" height="60" class="miniImg rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
           </a>
           <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" lass="item-thumb">
-            <img width="60" height="60" class="rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
+            <img width="60" height="60" class="miniImg rounded-2" [src]="product.url_photo" alt="{{ product.productName }}" />
           </a>
         </div>
         <!-- thumbs-wrap.// -->
@@ -31,8 +31,7 @@
       <main class="col-lg-6">
         <div class="ps-lg-3">
           <h4 class="title text-dark">
-            Quality Men's Hoodie for Winter, Men's Fashion <br />
-            Casual Hoodie
+            {{product.productDescription}}
           </h4>
           <div class="d-flex flex-row my-3">
             <div class="text-warning mb-1 me-2">
@@ -50,13 +49,12 @@
           </div>
 
           <div class="mb-3">
-            <span class="h5">$75.00</span>
-            <span class="text-muted">/per box</span>
+            <span class="h5">$ {{product.price}}</span>
+            <span class="text-muted">/per unit</span>
           </div>
 
           <p>
-            Modern look and quality demo item is a streetwear-inspired collection that continues to break away from the conventions of mainstream fashion. Made in Italy, these black and brown clothing low-top shirts for
-            men.
+            {{product.productDescription}}
           </p>
 
           <div class="row">
@@ -77,25 +75,18 @@
 
           <div class="row mb-4">
             <div class="col-md-4 col-6">
-              <label class="mb-2">Color</label>
-              <select class="form-select border border-secondary" style="height: 35px;">
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-              </select>
+              <label class="mb-2">Categoria</label>
+              <br>
+              
+              <div style="font-size: larger; font-weight: bolder;">{{product.category.categoryName}}</div>
             </div>
             <!-- col.// -->
             <div class="col-md-4 col-6 mb-3">
               <label class="mb-2 d-block">Cantidad</label>
-              <div class="input-group mb-3" style="width: 170px;">
-                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <input type="text" class="form-control text-center border border-secondary" placeholder="14" aria-label="Example text with button addon" aria-describedby="button-addon1" />
-                <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark">
-                  <i class="fas fa-plus"></i>
-                </button>
-              </div>
+              <select [(ngModel)]="product.quantityToSell" class="form-select border border-secondary">
+                <option *ngFor="let i of optionRange(product.quantityToSell)" [value]="i">{{ i }}</option>
+              </select>
+              
             </div>
           </div>
           <a href="#" class="btn btn-warning shadow-0"> Buy now </a>
@@ -180,22 +171,15 @@
             </div>
             <div class="tab-pane fade mb-2" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
               Tab content or sample information now <br />
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              Lorem 
             </div>
             <div class="tab-pane fade mb-2" id="ex1-pills-3" role="tabpanel" aria-labelledby="ex1-tab-3">
               Another tab content or sample information now <br />
-              Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.
+              Dolor 
             </div>
             <div class="tab-pane fade mb-2" id="ex1-pills-4" role="tabpanel" aria-labelledby="ex1-tab-4">
               Some other tab content or sample information now <br />
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
+              Lorem 
             </div>
           </div>
           <!-- Pills content -->
@@ -258,22 +242,4 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-<div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Detalle del Producto</h2>
-        <h3>{{ product.productName }}</h3>
-        <p>{{ product.productDescription }}</p>
-        <p>Precio: ${{ product.price }}</p>
-        <p>cantidad: {{ product.quantityToSell }}</p>
-        <p>Categoria: {{ product.category.categoryName }}</p>
-        <img [src]="product.url_photo" alt="{{ product.productName }}" class="img-fluid">
-      </div>
-    </div>
-  </div>
   

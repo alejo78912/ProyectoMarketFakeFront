@@ -12,6 +12,7 @@ export class DetalleProductoComponent implements OnInit{
 
   idProduct: number = 0;
   product!: Product ; // Ajusta el tipo de datos según la estructura de tus productos
+isEditable: any;
 
   constructor(private route: ActivatedRoute, private productService: ProductsService) { }
 
@@ -26,6 +27,18 @@ export class DetalleProductoComponent implements OnInit{
     this.productService.getProductById(this.idProduct).subscribe(data => {
       this.product = data;
     });
+  }
+
+  getQuantityOptions(maxQuantity: number): number[] {
+    return Array.from({ length: maxQuantity }, (_, index) => index + 1);
+  }
+
+  optionRange(maxValue: number): number[] {
+    const options: number[] = [];
+    for (let i = 1; i <= maxValue; i++) {
+      options.push(i);
+    }
+    return options;
   }
 }
 
