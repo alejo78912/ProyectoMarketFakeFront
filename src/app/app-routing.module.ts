@@ -19,6 +19,7 @@ import { ListByCategoryComponent } from './items/list-by-category/list-by-catego
 import { AddSupplierAdminComponent } from './admin/add-supplier-admin/add-supplier-admin.component';
 import { AdminModule } from './admin/admin.module';
 import { CartComponent } from './cart/cart.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 const routes: Routes = [{path : '', component:ItemsComponent},
 
@@ -41,7 +42,8 @@ const routes: Routes = [{path : '', component:ItemsComponent},
 {path: 'agregarusuarioAdmin', component:AgregarUsuarioAdminComponent},
 {path: 'agregarProducto', component:AgregarProductoAdminComponent},
 {path: 'addSupplier', component:AddSupplierAdminComponent},
-{path: 'cart', component:CartComponent}]
+{path: 'cart', component:CartComponent},
+{path: 'login', component:LogInComponent},]
 ;
 
 @NgModule({

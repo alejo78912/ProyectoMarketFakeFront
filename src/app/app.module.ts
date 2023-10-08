@@ -37,6 +37,8 @@ import { CartModule } from './cart/cart.module';
 import { CartComponent } from './cart/cart.component';
 import { SearchBarComponent } from './search/search-bar/search-bar.component';
 import { SearchModule } from './search/search.module';
+import { LogInComponent } from './log-in/log-in.component';
+import { LogInModule } from './log-in/log-in.module';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { SearchModule } from './search/search.module';
     UserDialogComponentComponent,
     SupplierDialogComponentComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { SearchModule } from './search/search.module';
     AdminModule,
     ItemsModule,
     CartModule,
-    SearchModule
+    SearchModule,
+    LogInModule
   ],
   providers: [ IniciarSesionService,
                 UsuarioComponent ],
