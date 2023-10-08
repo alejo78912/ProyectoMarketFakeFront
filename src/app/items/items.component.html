@@ -3,7 +3,7 @@
 <h1 class="title">Articulos a la venta</h1><br>
 
 <div class="row">
-    <div *ngFor="let producto of productos" class="col-md-2">
+    <div *ngFor="let producto of auxProducts" class="col-md-2">
         <div class="card" [routerLink]="'/detalle-producto/'+ producto.idProduct">
             <img [src]="producto.url_photo" class="card-img-top" alt="{{producto.productName}}">
             <div class="card-body">
