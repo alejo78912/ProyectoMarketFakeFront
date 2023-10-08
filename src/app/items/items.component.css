@@ -3,7 +3,7 @@
 .card {
     width: 380px; /* Ancho deseado de la tarjeta */
     height: 480px; /* Altura deseada de la tarjeta */
-    margin-bottom: 120px;
+    margin-bottom: 30px;
     padding-top: 10px;
     margin-left: 0px;
     margin-right: 5px;
@@ -11,7 +11,7 @@
 }
 
 .col-md-2 {
-    margin-bottom: 20px; /* Espacio entre las filas de tarjetas */
+    margin-bottom: 0px; /* Espacio entre las filas de tarjetas */
 
     margin-right: 200px; /* Espacio entre tarjetas */
 

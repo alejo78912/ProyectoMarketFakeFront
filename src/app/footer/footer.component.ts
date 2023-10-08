@@ -10,3 +10,5 @@ export class FooterComponent {
   url="https://icon-library.com/images/retailer-icon/retailer-icon-8.jpg"
 
 }
+
+

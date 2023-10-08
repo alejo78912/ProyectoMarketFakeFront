@@ -8,6 +8,8 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
 import { ListByCategoryComponent } from './list-by-category/list-by-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InventarioComponent } from './inventario/inventario.component';
+import { NavBarAdminComponent } from '../admin/nav-bar-admin/nav-bar-admin.component';
+import { AdminModule } from '../admin/admin.module';
 
 
 @NgModule({
@@ -16,13 +18,15 @@ import { InventarioComponent } from './inventario/inventario.component';
     ArticulosMasVendidosComponent,
     DetalleProductoComponent,
     ListByCategoryComponent,
-    InventarioComponent
+    InventarioComponent,
+
   ],
   imports: [
     CommonModule,
     ItemsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AdminModule
   ],
   exports : [
     ItemsComponent,

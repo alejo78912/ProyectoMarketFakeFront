@@ -1,0 +1,30 @@
+.barraBusqueda{
+    margin-left: 100px;
+  }
+
+  .btn-outline-success{
+    margin-left: -9px;
+    margin-right: 35px;
+  }
+
+  .form-control {
+    width: 750px; /* Adjust the width to your desired value */
+  }
+ 
+  @media (max-width: 1210px) {
+    .form-control {
+      width: 100px; /* Full width on small screens */
+    }
+  }
+ 
+  @media ((min-width:1210px) and (max-width:1550px)) {
+    .form-control {
+      width: 450px; /* Full width on small screens */
+    }
+  }
+ 
+  @media ((min-width:1550px) and (max-width:1800px)) {
+    .form-control {
+      width: 650px; /* Full width on small screens */
+    }
+  }

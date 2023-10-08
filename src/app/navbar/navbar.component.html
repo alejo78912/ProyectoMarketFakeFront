@@ -9,7 +9,7 @@
         
         <div>CATEGORIAS</div>
         <ng-container *ngFor="let categoria of categorias">
-        <a [routerLink]="" href="#" class="list-group-item list-group-item-action py-2 ripple">
+        <a routerLink="/categorias" href="#" class="list-group-item list-group-item-action py-2 ripple">
           <i class="fas fa-chart-line fa-fw me-3"></i><span>{{ categoria.categoryName}}</span>
         </a>
       </ng-container>

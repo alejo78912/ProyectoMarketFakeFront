@@ -3,6 +3,7 @@ import { Product } from '../product.model';
 import { ProductsService } from '../product.service';
 import { CartService } from '../cart/cart.service';
 import { SwalUtils } from '../utils/swal-utils';
+import { SharedServiceService } from '../shared-service.service';
 
 
 @Component({
@@ -12,12 +13,37 @@ import { SwalUtils } from '../utils/swal-utils';
 })
 export class ItemsComponent implements OnInit{
   productos: Product[] = [];
+  filteredProducts:Product[] = [];
   cart: Product[] = [];
+  busque: string = '';
+
+  constructor(
+    private sharedService: SharedServiceService,
+    private ProductsService: ProductsService,
+    private cartService: CartService
+  ) {}
 
 
-  constructor(private ProductsService: ProductsService,private cartService: CartService) { }
+  capture(busqued: any) {
+    this.busque = busqued;
+    console.log(this.busque);
+    this.filterProducts();
+    console.log(this.filteredProducts);
+    if(this.busque!=''){
+      this.productos=this.filteredProducts
+    }
+    
+    // You can perform additional actions here based on the search query.
+  }
 
-
+  filterProducts(){
+    this.filteredProducts=[];
+    for (let i = 0; i < this.productos.length; i++) {
+      if(this.productos[i].productName.toLowerCase().includes(this.busque.toLowerCase())){
+        this.filteredProducts.push(this.productos[i]);
+      }
+    }
+  }
  
  
   agregarProductoAlCarrito(idProducto: number): void {
@@ -43,6 +69,12 @@ export class ItemsComponent implements OnInit{
   ngOnInit(): void {
     this.ProductsService.productos().subscribe(data => {
       this.productos = data;
+    });
+
+    this.sharedService.getSearchQuery().subscribe((query) => {
+      this.busque = query;
+      this.capture(this.busque);
+      
     });
   }
 }

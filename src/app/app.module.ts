@@ -35,6 +35,8 @@ import { AdminModule } from './admin/admin.module';
 import { ItemsModule } from './items/items.module';
 import { CartModule } from './cart/cart.module';
 import { CartComponent } from './cart/cart.component';
+import { SearchBarComponent } from './search/search-bar/search-bar.component';
+import { SearchModule } from './search/search.module';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { CartComponent } from './cart/cart.component';
     BrowserAnimationsModule,
     AdminModule,
     ItemsModule,
-    CartModule
+    CartModule,
+    SearchModule
   ],
   providers: [ IniciarSesionService,
                 UsuarioComponent ],
