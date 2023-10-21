@@ -4,50 +4,32 @@
 <br>
 <form class="col-lg-6 offset-lg-2">
     
-
-   
-    <div class="form-group row">
-      <div class="col-8">
-        <label for="exampleInputPassword1" >ID producto</label>
-        <input type="text"[(ngModel)]="Produto.idProduct" name="nombreProducto" class="form-control" id="exampleInputPassword1" placeholder="ID del producto">
-      </div>
-      <div class="col-4 ">
-        <label for=""></label>
-
-        <div class="d-flex">
-            <div class="col"><button class="btn btn-primary" (click)="edit()">Editar</button></div>
-            <div class="col"><button class="btn btn-primary" (click)="borar()">Eliminar</button></div>
-        </div>
-        
-      </div>
-    </div>
-    <br>
+  
     <div class="form-group">
-      <label for="exampleInputPassword1" >Nombre producto</label>
+      <label for="exampleInputPassword1">Nombre producto</label>
       <input type="text"[(ngModel)]="Produto.productName" name="nombreProducto" class="form-control" id="exampleInputPassword1" placeholder="Nombre del producto">
-
     </div>
-    <br>
+  
     <div class="form-group">
       <label for="exampleInputPassword1">Valor producto</label>
       <input type="text"[(ngModel)]="Produto.price" name="valor" class="form-control" id="exampleInputPassword1" placeholder="Precio">
     </div>
-    <br>
+  
     <div class="form-group">
       <label for="exampleInputPassword1">Descripcion</label>
       <input type="text"[(ngModel)]="Produto.productDescription" name="descripcionProducto" class="form-control" id="exampleInputPassword1" placeholder="Descripcion">
     </div>
-    <br>
+
     <div class="form-group">
-        <label for="exampleInputPassword1">url imagen producto</label>
-        <input type="text"[(ngModel)]="Produto.url_photo" name="url_photo" class="form-control" id="exampleInputPassword1" placeholder="URL Imagen">
-    </div>
-    <br>
-    <div class="form-group">
+      <label for="imagenProducto">Imagen del producto</label>
+      <input type="file" (change)="onFileSelected($event)" class="form-control-file" id="imagenProducto">
+  </div>
+<div>{{Produto.url_photo}}</div>
+      <div class="form-group">
         <label for="exampleInputPassword1">Cantidad a vender</label>
         <input type="text"[(ngModel)]="Produto.quantityToSell" name="cantidadAVender" class="form-control" id="exampleInputPassword1" placeholder="Cantidad a vender">
-    </div>
-    <br>
+      </div>
+    
       <div class="form-group">
         <label for="exampleInputPassword1">ID Categoria</label>
         <input type="text"[(ngModel)]="Produto.category.idCategory" name="idCategoria" class="form-control" id="exampleInputPassword1" placeholder="ID Categoria">
@@ -83,11 +65,11 @@
   
     <br>
     
-    <div class="text-center">
-      <div class="add"><button class="btn btn-primary" (click)="addProduct()">Agregar</button></div>
+    <div class="row">
+      <div class="col"><button class="btn btn-primary" (click)="addProduct()">Agregar</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="ProductUpdate()">Editar</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="ProductDelete()">Eliminar</button></div>
     </div>
-
-    
   </form>
     
 

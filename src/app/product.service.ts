@@ -32,13 +32,24 @@ export class ProductsService {
     return this.http.get<Product>(url);
   }
 
-  actualizarProducto(idProducto: number, productoActualizado: Product): Observable<void> {
-    const url = `${this.apiUrlInventory}/${idProducto}/update`;
-    return this.http.put<void>(url, productoActualizado);
-  }
+  updateProduct(product: Product): Observable<Product> {
+    const url = `${this.apiUrlProduct}/${product.idProduct}/update`; 
+    return this.http.put<Product>(url, product);
+    }
     deleteProduct(idProduct: number): Observable<void> {
-    const url = `${this.apiUrlInventory}/${idProduct}/delete`;
+    const url = `${this.apiUrlProduct}/${idProduct}/delete`;
     return this.http.delete<void>(url);
+  }
+
+  uploadImage(input: File): Observable<string> {
+    const file = new FormData();
+    file.append('file', input);
+    const photo = `${this.apiUrlProduct}/image`;
+  
+    return this.http.post<string>(photo, file);
+    
+
+  
   }
   
 }
