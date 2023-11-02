@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InventarioComponent } from './inventario/inventario.component';
 import { NavBarAdminComponent } from '../admin/nav-bar-admin/nav-bar-admin.component';
 import { AdminModule } from '../admin/admin.module';
+import { HeaderModule } from '../header/header.module';
+import { NavbarModule } from '../navbar/navbar.module';
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { AdminModule } from '../admin/admin.module';
     DetalleProductoComponent,
     ListByCategoryComponent,
     InventarioComponent,
+    
 
   ],
   imports: [
@@ -26,14 +29,17 @@ import { AdminModule } from '../admin/admin.module';
     ItemsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminModule
+    AdminModule,
+    HeaderModule, 
+    NavbarModule
   ],
   exports : [
     ItemsComponent,
     ArticulosMasVendidosComponent,
     DetalleProductoComponent,
     ListByCategoryComponent,
-    InventarioComponent
+    InventarioComponent,
+   
   ]
 })
 export class ItemsModule { }

@@ -5,7 +5,7 @@ import { ItemsComponent } from './items/items.component';
 import { AdminComponent } from './admin/admin.component';
 import { DetalleProductoComponent } from './items/detalle-producto/detalle-producto.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
-import { IniciarSesionComponent } from './inciar-sesion/inciar-sesion.component';
+
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { InformeComponent } from './informe/informe.component';
 import { InventarioComponent } from './items/inventario/inventario.component';
@@ -21,7 +21,7 @@ import { AdminModule } from './admin/admin.module';
 import { CartComponent } from './cart/cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 
-const routes: Routes = [{path : '', component:ItemsComponent},
+const routes: Routes = [{path : '', component:LogInComponent},
 
 { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
 
@@ -31,7 +31,6 @@ const routes: Routes = [{path : '', component:ItemsComponent},
 {path: 'categorias', component:ListByCategoryComponent},
 {path: 'detalle-producto/:idProduct', component:DetalleProductoComponent},
 {path: 'empleado', component:EmpleadoComponent},
-{path: 'iniciarSesion', component:IniciarSesionComponent},
 {path: 'registrar', component:RegistrarseComponent},
 {path: 'informe', component:InformeComponent},
 {path: 'inventario', component:InventarioComponent},

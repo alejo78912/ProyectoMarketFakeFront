@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ItemsComponent } from './items/items.component';
 import { ArticulosMasVendidosComponent } from './items/articulos-mas-vendidos/articulos-mas-vendidos.component';
-import { IniciarSesionComponent } from './inciar-sesion/inciar-sesion.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { InventarioComponent } from './items/inventario/inventario.component';
 import { AdminComponent } from './admin/admin.component';
@@ -39,19 +38,18 @@ import { SearchBarComponent } from './search/search-bar/search-bar.component';
 import { SearchModule } from './search/search.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { LogInModule } from './log-in/log-in.module';
+import { HeaderModule } from './header/header.module';
+import { NavbarModule } from './navbar/navbar.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     FooterComponent,
-    IniciarSesionComponent,
     UsuarioComponent,
     EmpleadoComponent,
     InformeComponent,
     VentaComponent,
     InicioComponent,
-    NavbarComponent,
     RegistrarseComponent,
     ContactoComponent,
     ProductDialogComponentComponent,
@@ -71,7 +69,9 @@ import { LogInModule } from './log-in/log-in.module';
     ItemsModule,
     CartModule,
     SearchModule,
-    LogInModule
+    LogInModule,
+    HeaderModule,
+    NavbarModule
   ],
   providers: [ IniciarSesionService,
                 UsuarioComponent ],
