@@ -20,10 +20,12 @@ import { AddSupplierAdminComponent } from './admin/add-supplier-admin/add-suppli
 import { AdminModule } from './admin/admin.module';
 import { CartComponent } from './cart/cart.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { authGuard } from 'src/auth/auth.guard';
+import { Utils } from './utils/utils';
 
 const routes: Routes = [{path : '', component:LogInComponent},
 
-{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),   canActivate:[authGuard], canMatch:[()=>Utils.isRole('Admin')]},
 
 
 {path: 'inicio', component:InicioComponent},
@@ -33,14 +35,9 @@ const routes: Routes = [{path : '', component:LogInComponent},
 {path: 'empleado', component:EmpleadoComponent},
 {path: 'registrar', component:RegistrarseComponent},
 {path: 'informe', component:InformeComponent},
-{path: 'inventario', component:InventarioComponent},
 {path: 'venta', component:VentaComponent},
 {path: 'usuario', component:UsuarioComponent},
 {path: 'contacto', component:ContactoComponent},
-{path: 'agregarCategoria', component:AgregarCategoriaAdminComponent},
-{path: 'agregarusuarioAdmin', component:AgregarUsuarioAdminComponent},
-{path: 'agregarProducto', component:AgregarProductoAdminComponent},
-{path: 'addSupplier', component:AddSupplierAdminComponent},
 {path: 'cart', component:CartComponent},
 {path: 'login', component:LogInComponent},]
 ;

@@ -26,7 +26,6 @@ import { AgregarCategoriaAdminComponent } from './admin/agregar-categoria-admin/
 import { NavBarAdminComponent } from './admin/nav-bar-admin/nav-bar-admin.component';
 import { ListByCategoryComponent } from './items/list-by-category/list-by-category.component';
 import { AddSupplierAdminComponent } from './admin/add-supplier-admin/add-supplier-admin.component';
-import { ProductDialogComponentComponent } from './product-dialog-component/product-dialog-component.component';
 import { UserDialogComponentComponent } from './user-dialog-component/user-dialog-component.component';
 import { SupplierDialogComponentComponent } from './supplier-dialog-component/supplier-dialog-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,6 +39,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { LogInModule } from './log-in/log-in.module';
 import { HeaderModule } from './header/header.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { RestrictedComponent } from './restricted/restricted.component';
 
 @NgModule({
   declarations: [
@@ -52,9 +52,9 @@ import { NavbarModule } from './navbar/navbar.module';
     InicioComponent,
     RegistrarseComponent,
     ContactoComponent,
-    ProductDialogComponentComponent,
     UserDialogComponentComponent,
     SupplierDialogComponentComponent,
+    RestrictedComponent,
     
     
   ],

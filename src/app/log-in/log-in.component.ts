@@ -18,10 +18,12 @@ export class LogInComponent {
   onSubmit() {
     this.authService.login(this.email, this.password).subscribe(
       (response: LoginResponse) => {
-        if (response && response.view) {
+        if (response && response.view && response.view !== 'loginPage') {
           SwalUtils.customMessageOk(response.message, "Bienvenido");
           this.redirectToView(response.view);
         } else {
+          // Muestra un Swal de error genérico cuando las credenciales son incorrectas o response.view es 'loginPage'
+          SwalUtils.customMessageError("Credenciales incorrectas", "Error");
           this.handleLoginError();
         }
       },
@@ -30,6 +32,10 @@ export class LogInComponent {
       }
     );
   }
+  
+  
+  
+  
 
   redirectToView(view: string) {
     const routes: { [key: string]: string } = {
