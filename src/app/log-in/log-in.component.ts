@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IniciarSesionService, LoginResponse } from '../iniciar-sesion.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -9,16 +9,21 @@ import { SwalUtils } from '../utils/swal-utils';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css']
 })
-export class LogInComponent {
+export class LogInComponent implements OnInit {
   email: string = '';
   password: string = '';
 
+  ngOnInit(): void {
+      sessionStorage.clear()
+  }
   constructor(private authService: IniciarSesionService, private router: Router) { }
 
   onSubmit() {
     this.authService.login(this.email, this.password).subscribe(
       (response: LoginResponse) => {
         if (response && response.view && response.view !== 'loginPage') {
+          console.log(response);
+          sessionStorage.setItem('email',this.email) 
           SwalUtils.customMessageOk(response.message, "Bienvenido");
           this.redirectToView(response.view);
         } else {

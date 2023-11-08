@@ -6,9 +6,10 @@ import { AgregarUsuarioAdminComponent } from './agregar-usuario-admin/agregar-us
 import { AgregarProductoAdminComponent } from './agregar-producto-admin/agregar-producto-admin.component';
 import { AddSupplierAdminComponent } from './add-supplier-admin/add-supplier-admin.component';
 import { InventarioComponent } from '../items/inventario/inventario.component';
+import { authGuard } from 'src/auth/auth.guard';
 
 const routes: Routes = [
-  {path: '',component: AgregarUsuarioAdminComponent},
+  {path: '',component: AgregarUsuarioAdminComponent,canActivate:[authGuard]},
 
   {path: 'agregarCategoria', component:AgregarCategoriaAdminComponent},
   

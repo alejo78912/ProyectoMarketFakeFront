@@ -22,12 +22,11 @@ import { CartComponent } from './cart/cart.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { authGuard } from 'src/auth/auth.guard';
 import { Utils } from './utils/utils';
+import { RestrictedComponent } from './restricted/restricted.component';
 
 const routes: Routes = [{path : '', component:LogInComponent},
 
-{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),   canActivate:[authGuard], canMatch:[()=>Utils.isRole('Admin')]},
-
-
+{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
 {path: 'inicio', component:InicioComponent},
 {path: 'articulos', component:ItemsComponent},
 {path: 'categorias', component:ListByCategoryComponent},
@@ -39,8 +38,8 @@ const routes: Routes = [{path : '', component:LogInComponent},
 {path: 'usuario', component:UsuarioComponent},
 {path: 'contacto', component:ContactoComponent},
 {path: 'cart', component:CartComponent},
-{path: 'login', component:LogInComponent},]
-;
+{path: 'login', component:LogInComponent},
+{path: 'restricted', component:RestrictedComponent},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
