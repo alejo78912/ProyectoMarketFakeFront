@@ -94,16 +94,18 @@ export class ItemsComponent implements OnInit{
  
   agregarProductoAlCarrito(idProducto: number): void {
     // Set the idProduct in the cart object
-    this.cart.product.idProduct = idProducto;
-  
-    // Set the idUser in the cart object
-    this.cart.user.idUser = this.ced;
+    
   
     this.cartService.checkProductInCart(this.ced, idProducto).subscribe(
       productoEnCarrito => {
         if (productoEnCarrito === "isProductInCart") {
           SwalUtils.customMessageError('El producto ya está en el carrito.','agregue otro');
         } else {
+
+          this.cart.product.idProduct = idProducto;
+  
+  
+          this.cart.user.idUser = this.ced;
           this.cartService.agregarProductoAlCarrito(this.cart).subscribe(
             (response) => {
               SwalUtils.customMessageOk('El producto se agregó con éxito.','sigue comprando');

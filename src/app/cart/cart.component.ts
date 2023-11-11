@@ -4,6 +4,8 @@ import { Product } from '../product.model';
 import { Cart } from './cart.model';
 import { ProductsService } from '../product.service';
 import { Observable, map } from 'rxjs';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +19,7 @@ export class CartComponent  implements OnInit {
   product! : Product;
 
 
-  constructor(private cartService: CartService, private productsService : ProductsService) {}
+  constructor(private cartService: CartService, private productsService : ProductsService, private router: Router) {}
   ngOnInit(): void {
     this.obtenerCarrito();
     // this.obtenerProductoDelPrimerCarrito(); // Move this call inside the subscribe callback
@@ -61,7 +63,19 @@ export class CartComponent  implements OnInit {
         }
       }
     } else {
-      console.warn('No hay carritos disponibles.');
+      // Use Swal.fire with a confirm button
+    Swal.fire({
+      title: 'No hay productos en el carrito',
+      text: 'Ups, no cuentas con productos en el carrito',
+      icon: 'warning',
+      confirmButtonText: 'Ir a la sección de artículos',
+      
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Navegar a la sección de artículos al hacer clic en el botón de confirmación
+        this.router.navigate(['/articulos']);
+      }
+    });
     }
   }
 }
