@@ -1,10 +1,8 @@
-import { CanActivateChildFn, CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
-import { Utils } from 'src/app/utils/utils';
-import { IniciarSesionService, LoginResponse } from 'src/app/iniciar-sesion.service';
-import { LogInComponent } from 'src/app/log-in/log-in.component';
+import { CanActivateChildFn, CanActivateFn, Router } from '@angular/router';
+import { IniciarSesionService } from 'src/app/iniciar-sesion.service';
 
-export const authGuard: CanActivateChildFn = async (childRoute, state) => {
+export const guardUserGuard: CanActivateChildFn = async (childRoute, state) => {
   const router = inject(Router);
   const rol = inject(IniciarSesionService);
   console.log('Auth guard');
@@ -13,8 +11,11 @@ export const authGuard: CanActivateChildFn = async (childRoute, state) => {
   try {
     const response = await rol.findByEmail(email).toPromise();
 
-    if (response && response.userType === 'Admin') {
+    if (response && response.userType === 'Cliente') {
+      const id: string = response.idUser.toString()
+      localStorage.setItem('idUser', id) 
       return true;
+     
     } else if (!response) {
       router.navigateByUrl('restricted');
       console.log(response);

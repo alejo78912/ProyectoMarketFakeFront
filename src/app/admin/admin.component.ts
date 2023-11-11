@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent {
+export class AdminComponent  {
+
 
   cedulaUsuario: number=0;
 	nombreUsuario: string="";
@@ -14,6 +15,8 @@ export class AdminComponent {
   emailUsuario: string="";
 	constrasenia: string="";
 	telefonoUsuario:string="";
+
+
 
   cedulaUsuario1 = 0;
   nombreUsuario1 = '';

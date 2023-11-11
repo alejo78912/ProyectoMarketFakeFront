@@ -9,7 +9,7 @@ import { InventarioComponent } from '../items/inventario/inventario.component';
 import { authGuard } from 'src/auth/auth.guard';
 
 const routes: Routes = [
-  {path: '',component: AgregarUsuarioAdminComponent,canActivate:[authGuard]},
+  {path: '',component: AgregarUsuarioAdminComponent},
 
   {path: 'agregarCategoria', component:AgregarCategoriaAdminComponent},
   

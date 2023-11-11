@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from './user.model';
 
 export interface LoginResponse {
   view: string;
@@ -19,4 +20,10 @@ export class IniciarSesionService {
     const credentials = { email, password };
     return this.http.post<LoginResponse>(`${this.apiUrl}/login`, credentials);
   }
+
+  findByEmail(email: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/searching/${email}`, );
+  }
+
+
 }

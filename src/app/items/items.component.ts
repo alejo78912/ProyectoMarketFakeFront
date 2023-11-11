@@ -4,6 +4,7 @@ import { ProductsService } from '../product.service';
 import { CartService } from '../cart/cart.service';
 import { SwalUtils } from '../utils/swal-utils';
 import { SharedServiceService } from '../shared-service.service';
+import { Cart } from '../cart/cart.model';
 
 
 @Component({
@@ -15,18 +16,54 @@ export class ItemsComponent implements OnInit{
   productos: Product[] = [];
   auxProducts:Product[] = this.productos;
   filteredProducts:Product[] = [];
-  cart: Product[] = [];
+  cart : Cart ={
+    idCart :   0,
+    user : {
+      idUser: 0,
+      name: "",
+      lastname: "",
+      email: "",
+      password: "",
+      userType: "",
+      phoneNumber: ""
+    },
+    product :{
+      idProduct: 0,
+      price: 0,
+      url_photo: "aa",
+      quantityToSell: 0,
+      category: {
+        idCategory: 0,
+        categoryName: ''
+      },
+      supplier: {
+        idSupplier: 0,
+        nameSupplier: "",
+        addressSupplier: "",
+        phoneNumberSupplier: "",
+        emailSupplier: "",
+        urlSupplier: ""
+      },
+      productName: "",
+      productDescription: ""
+    }
+  }
   busque: string = '';
+  private id: string | null = localStorage.getItem('idUser');
+
+  ced: number = this.id ? parseInt(this.id, 10) : 0;
+
 
   constructor(
     private sharedService: SharedServiceService,
     private ProductsService: ProductsService,
     private cartService: CartService
+    
   ) {}
 
 
   capture(busqued: any) {
-    
+   
     console.log(this.busque);
     this.filterProducts();
     console.log(this.filteredProducts);
@@ -52,31 +89,52 @@ export class ItemsComponent implements OnInit{
     }
   }
  
+
+
  
   agregarProductoAlCarrito(idProducto: number): void {
-    this.cartService.verificarProductoEnCarrito(idProducto).subscribe(
+    // Set the idProduct in the cart object
+    this.cart.product.idProduct = idProducto;
+  
+    // Set the idUser in the cart object
+    this.cart.user.idUser = this.ced;
+  
+    this.cartService.checkProductInCart(this.ced, idProducto).subscribe(
       productoEnCarrito => {
-        if (productoEnCarrito) {
-         
-          SwalUtils.customMessageError('El producto ya está en el carrito.','agregue otro'); 
+        if (productoEnCarrito === "isProductInCart") {
+          SwalUtils.customMessageError('El producto ya está en el carrito.','agregue otro');
         } else {
-          this.cartService.agregarProductoAlCarrito(idProducto).subscribe(
+          this.cartService.agregarProductoAlCarrito(this.cart).subscribe(
             (response) => {
-              SwalUtils.customMessageOk('El producto se agregó con exito.','sigue comprando'); 
-            });
+              SwalUtils.customMessageOk('El producto se agregó con éxito.','sigue comprando');
+              
+              console.log('idUser:',  this.cart.user.idUser);
+              console.log('idProduct:', this.cart.product.idProduct);
+
+            },
+            error => {
+              console.error('Error al agregar el producto al carrito', error);
+              // Handle errors if necessary
+            }
+          );
         }
       },
       error => {
         console.error('Error al verificar el producto en el carrito', error);
-        // Maneja errores si es necesario
+        // Handle errors if necessary
       }
     );
   }
+  
 
   ngOnInit(): void {
+   
     this.ProductsService.productos().subscribe(data => {
       this.productos = data;
       this.auxProducts=this.productos
+
+     
+     
     });
 
     this.sharedService.getSearchQuery().subscribe((query) => {

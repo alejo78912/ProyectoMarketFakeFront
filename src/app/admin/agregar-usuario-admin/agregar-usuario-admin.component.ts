@@ -23,8 +23,12 @@ export class AgregarUsuarioAdminComponent implements OnInit{
 
 
   ngOnInit(): void {
+    sessionStorage.clear()
     this.UsuarioServiceListar.usuarios().subscribe(data => {
       this.usuarios = data;
+    
+
+
     });
   }
   addUsuario(): void {

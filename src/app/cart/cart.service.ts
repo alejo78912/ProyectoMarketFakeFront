@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../product.model';
+import { Cart } from './cart.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,25 +11,22 @@ import { Product } from '../product.model';
 
   constructor(private http: HttpClient) {}
 
-  agregarProductoAlCarrito(productId: number) {
-    return this.http.post(`${this.apiUrl}/agregar-producto/${productId}`, {});
+  agregarProductoAlCarrito(cart: Cart): Observable<Cart> {
+    return this.http.post<Cart>(`${this.apiUrl}`, cart);
   }
 
-  obtenerCarrito(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/showCart`);
+  obtenerCarrito(idUser :number): Observable<Cart[]> {
+    return this.http.get<Cart[]>(`${this.apiUrl}/${idUser}/carts`);
   }
   deleteCarrito(idCategory: number): Observable<void> {
     const url = `${this.apiUrl}/borrar-Carrito/${idCategory}`;
     return this.http.delete<void>(url);
   }
 
-  verificarProductoEnCarrito(idProduct: number): Observable<Product> {
-    const url = `${this.apiUrl}/buscar/${idProduct}`;
-    return this.http.get<Product>(url);
+  checkProductInCart(idUser: number,idProduct: number): Observable<String> {
+    const url = `${this.apiUrl}/checkProductInCart/${idUser}/${idProduct}`;
+    return this.http.get<String>(url);
   }
 
-  actualizarProductoEnCarrito(idProducto: number, productoActualizado: Product): Observable<void> {
-    const url = `${this.apiUrl}/actualizar-Carrito/${idProducto}`;
-    return this.http.put<void>(url, productoActualizado);
-  }
+
 }
