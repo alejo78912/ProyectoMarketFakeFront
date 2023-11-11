@@ -1,0 +1,16 @@
+/* Agrega tus estilos personalizados aquí según sea necesario */
+body {
+    background-color: #f8f9fa;
+  }
+  
+  form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-secondary {
+    margin-top: 10px;
+  }
+  

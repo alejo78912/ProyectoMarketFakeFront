@@ -1,34 +1,37 @@
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    Registro
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="cedula">Cédula</label>
-                            <input type="text" class="form-control" id="cedula" placeholder="Ingrese su cédula">
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Nombre de usuario</label>
-                            <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre de usuario">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" placeholder="Ingrese su teléfono"><br>    
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Registrarse</button><br><br>
-                        <button type="submit" class="btn btn-primary btn-block"><a class="nav-link" routerLink="/iniciarSesion"  ariaCurrentWhenActive="page"> Iniciar sesión</a></button>
-                   
-                    </form>
-                </div>
-            </div>
-        </div>
+<form class="col-lg-6 offset-lg-3 my-4" (ngSubmit)="addUsuario()">
+    <div class="form-group">
+      <label for="cedulaUsuario">Cedula</label>
+      <input type="text" [(ngModel)]="usuario.idUser" name="cedula_usuario" class="form-control" id="cedulaUsuario" placeholder="Cedula" required>
     </div>
-</div>
+  
+    <div class="form-group">
+      <label for="nombresUsuario">Nombres</label>
+      <input type="text" [(ngModel)]="usuario.name" name="nombre_usuario" class="form-control" id="nombresUsuario" placeholder="Nombres" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="apellidosUsuario">Apellidos</label>
+      <input type="text" [(ngModel)]="usuario.lastname" name="apellido_usuario" class="form-control" id="apellidosUsuario" placeholder="Apellidos" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="emailUsuario">Email</label>
+      <input type="email" [(ngModel)]="usuario.email" name="email_usuario" class="form-control" id="emailUsuario" placeholder="Email" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="contraseniaUsuario">Contraseña</label>
+      <input type="password" [(ngModel)]="usuario.password" name="contrasenia" class="form-control" id="contraseniaUsuario" placeholder="Contraseña" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="telefonoUsuario">Teléfono</label>
+      <input type="tel" [(ngModel)]="usuario.phoneNumber" name="telefono_usuario" class="form-control" id="telefonoUsuario" placeholder="Teléfono" required>
+    </div>
+  
+    <div class="d-flex justify-content-between align-items-center">
+      <button type="submit" class="btn btn-primary">Registrar</button>
+      <a href="#" (click)="goBack()" class="btn btn-secondary">Atrás</a>
+    </div>
+  </form>
+  

@@ -1,0 +1,60 @@
+
+
+.card {
+    width: 380px; /* Ancho deseado de la tarjeta */
+    height: 480px; /* Altura deseada de la tarjeta */
+    margin-bottom: 30px;
+    padding-top: 10px;
+    margin-left: 0px;
+    margin-right: 5px;
+    text-align: center; /* Centra el contenido de la tarjeta horizontalmente */
+}
+
+.col-md-2 {
+    margin-bottom: 0px; /* Espacio entre las filas de tarjetas */
+
+    margin-right: 200px; /* Espacio entre tarjetas */
+
+
+}
+
+/* Ajusta el tamaño de las imágenes de las tarjetas */
+.card-img-top {
+    object-fit: contain;
+    width: 100%; /* Ancho deseado de la imagen */
+    height: 250px; /* Altura deseada de la imagen */
+    display: block; /* Centra la imagen horizontalmente en su contenedor */
+    margin: -10px auto; /* Centra la imagen horizontalmente */
+    
+}
+
+.btn-primary{
+    background:green;
+    border: 0;
+}
+
+.title{
+    margin-left: 500px;
+    
+}
+
+.card .btn {
+    z-index: 2;
+    position: relative;
+ }
+
+ a.product-link {
+    text-decoration: none !important; /* Elimina el subrayado */
+    color: inherit; /* Usa el color heredado del elemento contenedor */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar el mouse */
+  
+    /* Puedes agregar otros estilos según tus preferencias */
+  }
+  
+  
+  /* Estilo para los enlaces en la lista de productos cuando se pasa el mouse */
+  a.product-link:hover {
+    text-decoration: none; /* Agrega subrayado al pasar el mouse */
+    color: black; /* Cambia el color al pasar el mouse */
+  }
+  

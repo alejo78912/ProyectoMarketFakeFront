@@ -45,7 +45,7 @@ export class AgregarUsuarioAdminComponent implements OnInit{
     }
 
 
-    usuarioUpdate(): void {
+    usuarioUpdate(idUser: number): void {
    
       this.userService.updateUsuario(this.usuario).subscribe((data) => {
         this.ngOnInit();
@@ -57,9 +57,9 @@ export class AgregarUsuarioAdminComponent implements OnInit{
 
     }
 
-    usuarioDelete(): void {
+    usuarioDelete(idUser: number): void {
    
-      this.userService.deleteUsuario(this.usuario.idUser).subscribe((data) => {
+      this.userService.deleteUsuario(idUser).subscribe((data) => {
         this.ngOnInit();
         
       });

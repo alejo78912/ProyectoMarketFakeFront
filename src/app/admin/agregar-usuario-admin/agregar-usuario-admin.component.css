@@ -1,0 +1,10 @@
+/* Agrega tus estilos personalizados aquí según sea necesario */
+.btn-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .btn-actions button {
+    margin-right: 10px; /* Ajusta el valor según desees para el espacio entre botones */
+  }
+  
