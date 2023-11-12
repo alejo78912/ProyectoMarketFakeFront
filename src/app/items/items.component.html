@@ -1,26 +1,37 @@
 <app-header></app-header>
 <div class="row">
+
   <div class="col-2">
     <app-navbar></app-navbar>
   </div>
-<br>
-<div>{{busque}}</div>
-<h1 class="title">Articulos a la venta</h1><br>
-
-<div class="row">
-    <div *ngFor="let producto of auxProducts" class="col-md-2">
-        <div class="card" [routerLink]="'/detalle-producto/'+ producto.idProduct">
-            <img [src]="producto.url_photo" class="card-img-top" alt="{{producto.productName}}">
-            <div class="card-body">
-                <h5 class="card-title">{{producto.productName}}</h5>
-                <p class="card-text"><strong>Descripción: {{producto.productDescription}}</strong></p>
-                <p class="card-text"><strong>Precio: ${{producto.price}}</strong></p>
-                <p class="card-text"><strong>Cantidad Disponible: {{producto.quantityToSell}}</strong></p>
-                <br>
-                <button class="btn btn-primary" (click)="agregarProductoAlCarrito(producto.idProduct); $event.stopPropagation();">Agregar al carrito</button>
+  <div class="col-10">
+    <br>
+    <div>{{busque}}</div>
+    <h1 class="title">Articulos a la venta</h1><br>
+    <div class="row">
+        <div *ngFor="let producto of auxProducts" class="col-md-2">
+            <div class="card" [routerLink]="'/detalle-producto/'+ producto.idProduct">
+                <img [src]="producto.url_photo" class="card-img-top" alt="{{producto.productName}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{producto.productName}}</h5>
+                    <p class="card-text"><strong>Descripción: {{producto.productDescription}}</strong></p>
+                    <p class="card-text"><strong>Precio: ${{producto.price}}</strong></p>
+                    <p class="card-text"><strong>Cantidad Disponible: {{producto.quantityToSell}}</strong></p>
+                    <br>
+                    <button class="btn btn-primary" (click)="agregarProductoAlCarrito(producto.idProduct); $event.stopPropagation();">Agregar al carrito</button>
+                </div>
             </div>
         </div>
     </div>
+
+  </div>
+
+
 </div>
+<div class="row">
+  <div class="col-2">
+    <app-navbar></app-navbar>
+  </div>
+
 
 
