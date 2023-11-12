@@ -2,8 +2,7 @@
 <html lang="en">
 
 <header>
- <app-header></app-header>
-
+  <app-header></app-header>
 </header>
 
 <body>
@@ -13,7 +12,7 @@
       <div class="col-md-8">
         <!-- Lista de productos en el carrito -->
         <ul class="list-group">
-          <li class="list-group-item" *ngFor="let cart of carts ">
+          <li class="list-group-item" *ngFor="let cart of carts">
             <div class="row">
               <div class="col-md-3">
                 <!-- Mostrar la imagen del producto -->
@@ -21,13 +20,13 @@
               </div>
               <div class="col-md-6">
                 <p>{{ cart.product.idProduct }}</p>
-
                 <h4>{{ cart.product.productName }}</h4>
                 <p><strong>Precio:</strong> {{ cart.product.price }} $</p>
                 <label for="quantity">Cantidad:</label>
-                <select [ngModel]="cart.product.quantityToSell" class="form-control" [disabled]="!isEditable">
+                <select [ngModel]="cart.product.quantityToSell" class="form-control" [disabled]="!isEditable"
+                  (change)="actualizarTotal(cart, $event)">
                   <option *ngFor="let i of getQuantityOptions(cart.product.quantityToSell)" [value]="i"
-                    [attr.selected]="i === 1 ? true : null">{{ i }}</option>
+                    [attr.selected]="i === cart.product.quantityToSell ? true : null">{{ i }}</option>
                 </select>
               </div>
               <div class="col-md-3">
@@ -37,11 +36,29 @@
           </li>
         </ul>
       </div>
-      <!-- ... Resto de tu código ... -->
+      <!-- Resumen de Compra -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Resumen de Compra</h5>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let cart of carts">
+                <span>{{ cart.product.productName }}</span>
+                <span class="float-end">
+                  {{ cart.product.price * cart.product.quantityToSell }} $
+                </span>
+              </li>
+            </ul>
+            <div class="card-footer">
+              <strong>Total: {{ calcularTotal() }} $</strong>
+            </div>
+          </div>
+        </div>
+        <!-- Botón para comprar -->
+        <button class="btn btn-success mt-3" (click)="comprar()">Comprar</button>
+      </div>
     </div>
   </div>
-
-  <!-- ... Tu enlace al archivo JavaScript de Bootstrap ... -->
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+/* Agrega este bloque de estilos en tu archivo CSS o en la sección de estilos de tu componente Angular */
+
+form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Examinar";
+  }
+  
+  .row {
+    margin-top: 20px;
+  }
+  
+  /* Agrega estilos adicionales según tus necesidades */
+  

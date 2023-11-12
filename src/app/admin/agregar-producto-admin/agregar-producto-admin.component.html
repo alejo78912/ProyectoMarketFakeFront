@@ -19,12 +19,16 @@
       <label for="exampleInputPassword1">Descripcion</label>
       <input type="text"[(ngModel)]="Produto.productDescription" name="descripcionProducto" class="form-control" id="exampleInputPassword1" placeholder="Descripcion">
     </div>
-
     <div class="form-group">
       <label for="imagenProducto">Imagen del producto</label>
-      <input type="file" (change)="onFileSelected($event)" class="form-control-file" id="imagenProducto">
-  </div>
-<div>{{Produto.url_photo}}</div>
+      <div class="custom-file">
+        <input type="file" (change)="onFileSelected($event)" class="custom-file-input" id="imagenProducto">
+        <label class="custom-file-label" for="imagenProducto">Seleccionar archivo</label>
+      </div>
+      <small id="fileHelp" class="form-text text-muted">Selecciona una imagen para el producto.</small>
+    </div>
+  
+    
       <div class="form-group">
         <label for="exampleInputPassword1">Cantidad a vender</label>
         <input type="text"[(ngModel)]="Produto.quantityToSell" name="cantidadAVender" class="form-control" id="exampleInputPassword1" placeholder="Cantidad a vender">
@@ -36,21 +40,20 @@
         <input type="text"[(ngModel)]="Produto.category.categoryName" name="nombreCategoria" class="form-control" id="exampleInputPassword1" placeholder="Email" hidden="true">
       </div>
      
-
-      <div class="form-group" *ngFor="let categoria of categorias">
+      <div class="form-group">
         <label for="categoriaSelect">Categoría del producto</label>
         <select id="categoriaSelect" class="form-select" [(ngModel)]="Produto.category.idCategory" name="categoryId">
-          <option  [ngValue]="categoria.idCategory">{{ categoria.categoryName }}</option>
+          <option *ngFor="let categoria of categorias" [ngValue]="categoria.idCategory">{{ categoria.categoryName }}</option>
         </select>
       </div>
       
-      <div class="form-group" *ngFor="let proveedor of suppliers">
+      <div class="form-group">
         <label for="proveedorSelect">Proveedor del producto</label>
         <select id="proveedorSelect" class="form-select" [(ngModel)]="Produto.supplier.idSupplier" name="supplierId">
-          <option  [ngValue]="proveedor.idSupplier">{{ proveedor.nameSupplier }}</option>
+          <option *ngFor="let proveedor of suppliers" [ngValue]="proveedor.idSupplier">{{ proveedor.nameSupplier }}</option>
         </select>
       </div>
-
+      
       <div class="form-group">
         <label for="exampleInputPassword1" hidden="true">Nombre proveedor</label>
         <input type="text"[(ngModel)]="Produto.supplier.nameSupplier" name="nombreCategoria" class="form-control" id="exampleInputPassword1" placeholder="Email" hidden="true">

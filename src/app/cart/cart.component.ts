@@ -78,5 +78,58 @@ export class CartComponent  implements OnInit {
     });
     }
   }
+
+ // ... Tu código actual ...
+
+// Función para calcular el total de la compra
+calcularTotal(): number {
+  let total = 0;
+
+  if (this.carts) {
+    this.carts.forEach(cart => {
+      total += cart.product.price * cart.product.quantityToSell;
+    });
+  }
+
+  return total;
+}
+
+// ... Tu código actual ...
+
+// Función para manejar el cambio en la cantidad desde el combo
+actualizarTotal(cart: Cart, event: any): void {
+  const nuevaCantidad = event.target?.value; // Usar el operador de navegación segura
+  if (nuevaCantidad !== undefined) {
+    // Actualizar la cantidad en el objeto Cart
+    cart.product.quantityToSell = parseInt(nuevaCantidad, 10);
+
+    // Puedes agregar lógica adicional aquí según tus necesidades
+
+    // Recalcular el total después del cambio en la cantidad
+    const nuevoTotal = this.calcularTotal();
+    console.log('Nuevo Total:', nuevoTotal);
+  }
+}
+
+// ... Tu código actual ...
+
+
+// Función para simular la compra
+comprar(): void {
+  // Aquí puedes agregar la lógica para realizar la compra
+  // Puedes enviar la información al servidor, mostrar un mensaje, etc.
+  Swal.fire({
+    title: 'Compra realizada',
+    text: '¡Gracias por tu compra!',
+    icon: 'success',
+    confirmButtonText: 'Ok'
+  });
+
+  // También puedes redirigir al usuario a otra página después de la compra
+  this.router.navigate(['/compra-realizada']);
+}
+
+// ... Tu código actual ...
+
 }
 
