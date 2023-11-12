@@ -1,18 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product.model';
 import { ProductsService } from '../../product.service';
 import { SwalUtils } from 'src/app/utils/swal-utils';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CategoriaService } from 'src/app/category.service';
+import { Category } from 'src/app/category.model';
+import { Supplier } from 'src/app/supplier.model';
+import { SupplierServiceService } from 'src/app/supplier-service.service';
 
 @Component({
   selector: 'app-agregar-producto-admin',
   templateUrl: './agregar-producto-admin.component.html',
   styleUrls: ['./agregar-producto-admin.component.css']
 })
-export class AgregarProductoAdminComponent {
+export class AgregarProductoAdminComponent implements OnInit{
   selectedFile: File | null = null;
   errorMessage!: string;
-
+  categorias :Category[]=[];
+  suppliers: Supplier[] = [];
   
   Produto: Product = { 
     
@@ -40,14 +45,24 @@ export class AgregarProductoAdminComponent {
       "url": ""
     };
     
-    constructor(private productoServicio: ProductsService, private fb: FormBuilder) {
+    constructor(private productoServicio: ProductsService, private fb: FormBuilder, private CategoriaServicio: CategoriaService, private supplierService : SupplierServiceService) {
     
     }
+  ngOnInit(): void {
+    this.CategoriaServicio.categorias().subscribe(data => {
+      this.categorias = data;
+    });
+
+    this.supplierService.suppliers().subscribe(data => {
+      this.suppliers = data;
+     
+    });
+  }
   
   addProduct(): void {
    
       this.productoServicio.addProduct(this.Produto).subscribe((data) => {
-        // Puedes realizar acciones adicionales aquí, como actualizar la lista de tareas
+       console.log(data.category.idCategory)
         this.Produto.idProduct = 0;
         this.Produto.price = 0;
         this.Produto.url_photo = "";
