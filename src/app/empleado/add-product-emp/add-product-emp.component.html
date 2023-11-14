@@ -1,0 +1,85 @@
+<app-navbar-empleado></app-navbar-empleado>
+<br>
+<br>
+<form class="col-lg-6 offset-lg-2">
+    
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nombre producto</label>
+      <input type="text"[(ngModel)]="Produto.productName" name="nombreProducto" class="form-control" id="exampleInputPassword1" placeholder="Nombre del producto">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Valor producto</label>
+      <input type="text"[(ngModel)]="Produto.price" name="valor" class="form-control" id="exampleInputPassword1" placeholder="Precio">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Descripcion</label>
+      <input type="text"[(ngModel)]="Produto.productDescription" name="descripcionProducto" class="form-control" id="exampleInputPassword1" placeholder="Descripcion">
+    </div>
+    <div class="form-group">
+      <label for="imagenProducto">Imagen del producto</label>
+      <div class="custom-file">
+        <input type="file" (change)="onFileSelected($event)" class="custom-file-input" id="imagenProducto">
+        <label class="custom-file-label" for="imagenProducto">Seleccionar archivo</label>
+      </div>
+      <small id="fileHelp" class="form-text text-muted">Selecciona una imagen para el producto.</small>
+    </div>
+  
+    
+      <div class="form-group">
+        <label for="exampleInputPassword1">Cantidad a vender</label>
+        <input type="text"[(ngModel)]="Produto.quantityToSell" name="cantidadAVender" class="form-control" id="exampleInputPassword1" placeholder="Cantidad a vender">
+      </div>
+    
+      
+      <div class="form-group">
+        <label for="exampleInputPassword1" hidden="true">Nombre Categoria</label>
+        <input type="text"[(ngModel)]="Produto.category.categoryName" name="nombreCategoria" class="form-control" id="exampleInputPassword1" placeholder="Email" hidden="true">
+      </div>
+     
+      <div class="form-group">
+        <label for="categoriaSelect">Categoría del producto</label>
+        <select id="categoriaSelect" class="form-select" [(ngModel)]="Produto.category.idCategory" name="categoryId">
+          <option *ngFor="let categoria of categorias" [ngValue]="categoria.idCategory">{{ categoria.categoryName }}</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="proveedorSelect">Proveedor del producto</label>
+        <select id="proveedorSelect" class="form-select" [(ngModel)]="Produto.supplier.idSupplier" name="supplierId">
+          <option *ngFor="let proveedor of suppliers" [ngValue]="proveedor.idSupplier">{{ proveedor.nameSupplier }}</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="exampleInputPassword1" hidden="true">Nombre proveedor</label>
+        <input type="text"[(ngModel)]="Produto.supplier.nameSupplier" name="nombreCategoria" class="form-control" id="exampleInputPassword1" placeholder="Email" hidden="true">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" hidden="true">Email proveedor</label>
+        <input type="text"[(ngModel)]="Produto.supplier.emailSupplier" name="nombreCategoria" class="form-control" id="exampleInputPassword1" placeholder="Email" hidden="true">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" hidden="true">Dirección proveedor</label>
+        <input type="text"[(ngModel)]="Produto.supplier.addressSupplier" name="nombreCategoria" class="form-control" id="exampleInputPassword1" placeholder="Email" hidden="true">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" hidden="true">Número proveedor</label>
+        <input type="text"[(ngModel)]="Produto.supplier.phoneNumberSupplier" name="nombreCategoria" class="form-control" id="exampleInputPassword1" placeholder="Email" hidden="true">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" hidden="true">Url proveedor</label>
+        <input type="text"[(ngModel)]="Produto.supplier.urlSupplier" name="nombreCategoria" class="form-control" id="exampleInputPassword1" placeholder="Email" hidden="true">
+      </div>
+  
+    <br>
+    
+    <div class="row">
+      <div class="col"><button class="btn btn-primary" (click)="addProduct()">Agregar</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="ProductUpdate()">Editar</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="ProductDelete()">Eliminar</button></div>
+    </div>
+  </form>
+    

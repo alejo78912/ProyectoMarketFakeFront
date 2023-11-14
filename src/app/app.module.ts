@@ -40,6 +40,9 @@ import { LogInModule } from './log-in/log-in.module';
 import { HeaderModule } from './header/header.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { RestrictedComponent } from './restricted/restricted.component';
+import { NavbarEmpleadoComponent } from './empleado/navbar-empleado/navbar-empleado.component';
+import { AddProductEmpComponent } from './empleado/add-product-emp/add-product-emp.component';
+import { AddCategoryEmpComponent } from './empleado/add-category-emp/add-category-emp.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,7 @@ import { RestrictedComponent } from './restricted/restricted.component';
     UserDialogComponentComponent,
     SupplierDialogComponentComponent,
     RestrictedComponent,
+    
     
     
   ],

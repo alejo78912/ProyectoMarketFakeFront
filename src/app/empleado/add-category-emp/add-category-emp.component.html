@@ -1,0 +1,41 @@
+<app-navbar-empleado></app-navbar-empleado>
+
+<form class="col-lg-6 offset-lg-2">
+    <br>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">id categoria</label>
+      <input type="text"[(ngModel)]="categoria.idCategory" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Id Categoria">
+      <label for="exampleInputPassword1">Nombre categoria</label>
+      <input type="text"[(ngModel)]="categoria.categoryName" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Nombre Categoria">
+    </div>
+    <br>
+    <div class="row">
+      <div class="col"><button class="btn btn-primary" (click)="addCategoria()">Agregar</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="categoryUpdate()">Editar</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="categoryDelete()">Eliminar</button></div>
+    </div>
+    <br>
+    <br>
+</form>
+
+
+  <div class="container">
+    <h1>Usuarios</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>NOMBRE CATEGORIA</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categoria of categorias">
+          <td>{{categoria.idCategory}}</td>
+          <td>{{categoria.categoryName}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

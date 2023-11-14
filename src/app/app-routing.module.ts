@@ -9,6 +9,7 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
 const routes: Routes = [{path : '', component:LogInComponent},
 
 { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),  },
+{ path: 'empleado', loadChildren: () => import('./empleado/empleado.module').then(m => m.EmpleadoModule),  },
 { path: 'articulos', loadChildren: () => import('./items/items.module').then(m => m.ItemsModule), canActivateChild:[guardUserGuard] },
 {path: 'login', component:LogInComponent},
 {path: 'restricted', component:RestrictedComponent},

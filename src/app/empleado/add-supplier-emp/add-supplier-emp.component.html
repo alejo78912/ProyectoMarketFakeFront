@@ -1,0 +1,73 @@
+<app-navbar-empleado></app-navbar-empleado>
+<br>
+<form class="col-lg-6 offset-lg-2">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Id del proveedor</label>
+      <input type="text"[(ngModel)]="supplier.idSupplier" name="cedula_usuario" class="form-control" id="" placeholder="id proveedor">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nombre del proveedor</label>
+      <input type="text"[(ngModel)]="supplier.nameSupplier" name="nombre_usuario" class="form-control" id="exampleInputPassword1" placeholder="Nombre del proveedor">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Direccion del proveedor</label>
+      <input type="text"[(ngModel)]="supplier.addressSupplier" name="apellido_usuario" class="form-control" id="exampleInputPassword1" placeholder="Direccion del proveedor">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Email del proveedor</label>
+      <input type="text"[(ngModel)]="supplier.emailSupplier" name="email_usuario" class="form-control" id="exampleInputPassword1" placeholder="Email del proveedor">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Número del proveedor</label>
+        <input type="text"[(ngModel)]="supplier.phoneNumberSupplier" name="constrasenia" class="form-control" id="exampleInputPassword1" placeholder="Número del proveedor">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Url del proveedor</label>
+        <input type="text"[(ngModel)]="supplier.urlSupplier" name="telefono_usuario" class="form-control" id="exampleInputPassword1" placeholder="Url del proveedor">
+      </div>
+    
+
+  
+    <br>
+  
+    <div class="row">
+      <div class="col"><button class="btn btn-primary" (click)="addSupplier()">Agregar</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="supplierUpdate()">Editar</button></div>
+      <div class="col"><button class="btn btn-primary" (click)="supplierDelete()">Eliminar</button></div>
+    </div>
+  </form>
+
+
+
+  <div class="container">
+    <h1>Usuarios</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id del proveedor</th>
+          <th>Nombre del proveedor</th>
+          <th>Direccion del proveedor</th>
+          <th>Email del proveedor</th>
+          <th>Número del proveedor</th>
+          <th>Url del proveedor</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Supplier of suppliers">
+          <td>{{Supplier.idSupplier}}</td>
+          <td>{{Supplier.nameSupplier}}</td>
+          <td>{{Supplier.emailSupplier}}</td>
+          <td>{{Supplier.addressSupplier}}</td>
+          <td>{{Supplier.phoneNumberSupplier}}</td>
+          <td>{{Supplier.urlSupplier}}</td>
+    
+        </tr>
+      </tbody>
+    </table>
+  </div>

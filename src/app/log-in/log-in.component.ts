@@ -39,9 +39,6 @@ export class LogInComponent implements OnInit {
   }
   
   
-  
-  
-
   redirectToView(view: string) {
     const routes: { [key: string]: string } = {
       'clienteView': '/articulos',
