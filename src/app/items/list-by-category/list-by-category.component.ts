@@ -4,9 +4,10 @@ import { CategoriasListarService } from '../../categorias-listar.service';
 import { CategoriaService } from '../../category.service';
 import { Product } from '../../product.model';
 import { Category} from '../../category.model';
-import { Cart } from 'src/app/cart/cart.model';
 import { SwalUtils } from 'src/app/utils/swal-utils';
+import { Cart } from 'src/app/cart/cart.model';
 import { CartService } from 'src/app/cart/cart.service';
+
 
 @Component({
   selector: 'app-list-by-category',

@@ -1,0 +1,15 @@
+<!-- formulario de compra -->
+<form>
+    <label for="cantidadTotal">Cantidad Total:</label>
+    <input type="number" id="cantidadTotal" name="cantidadTotal" [(ngModel)]="totalQuantity" disabled="true">
+  
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" [(ngModel)]="Sale.address" required>
+  
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" name="telefono" [(ngModel)]="Sale.phoneNumber" required>
+  
+
+    <button (click)="realizarCompra()">Realizar Compra</button>
+  </form>
+  

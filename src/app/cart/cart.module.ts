@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderModule } from '../header/header.module';
+import { SaleModule } from '../sale/sale.module';
 
 
 
@@ -13,7 +14,8 @@ import { HeaderModule } from '../header/header.module';
   imports: [
     CommonModule,
     FormsModule,
-    HeaderModule
+    HeaderModule,
+    SaleModule
   ],
   exports:[
     CartComponent

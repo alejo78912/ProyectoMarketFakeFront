@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
-import { CanActivateChildFn, Router } from '@angular/router';
+import { CanActivateChildFn, CanActivateFn, Router } from '@angular/router';
 import { IniciarSesionService } from 'src/app/iniciar-sesion.service';
 
-export const guardUserGuard: CanActivateChildFn = async (childRoute, state) => {
+export const employeeGuard: CanActivateChildFn = async (childRoute, state) => {
   const router = inject(Router);
   const rol = inject(IniciarSesionService);
   console.log('Auth guard');
@@ -11,7 +11,7 @@ export const guardUserGuard: CanActivateChildFn = async (childRoute, state) => {
   try {
     const response = await rol.findByEmail(email).toPromise();
 
-    if (response && response.userType === 'Cliente') {
+    if (response && response.userType === 'Empleado') {
       const id: string = response.idUser.toString()
       localStorage.setItem('idUser', id) 
       return true;

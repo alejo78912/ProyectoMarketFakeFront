@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product.model';
 import { ProductsService } from '../../product.service';
 import { ActivatedRoute } from '@angular/router';
+import { SwalUtils } from 'src/app/utils/swal-utils';
 import { Cart } from 'src/app/cart/cart.model';
 import { CartService } from 'src/app/cart/cart.service';
-import { SwalUtils } from 'src/app/utils/swal-utils';
 
 @Component({
   selector: 'app-detalle-producto',

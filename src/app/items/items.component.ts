@@ -1,10 +1,11 @@
 import { Component, OnInit  } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductsService } from '../product.service';
-import { CartService } from '../cart/cart.service';
 import { SwalUtils } from '../utils/swal-utils';
 import { SharedServiceService } from '../shared-service.service';
 import { Cart } from '../cart/cart.model';
+import { CartService } from '../cart/cart.service';
+
 
 
 @Component({

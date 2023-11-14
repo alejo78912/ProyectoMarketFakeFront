@@ -49,13 +49,13 @@
                 </span>
               </li>
             </ul>
-            <div class="card-footer">
+            <div class="card-footer" >
               <strong>Total: {{ calcularTotal() }} $</strong>
             </div>
           </div>
         </div>
         <!-- Botón para comprar -->
-        <button class="btn btn-success mt-3" (click)="comprar()">Comprar</button>
+        <button class="btn btn-success mt-3" *ngFor="let cart of carts" (click)="comprar()">Comprar</button>
       </div>
     </div>
   </div>

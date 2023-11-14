@@ -3,7 +3,7 @@ import { CartService } from './cart.service';
 import { Product } from '../product.model';
 import { Cart } from './cart.model';
 import { ProductsService } from '../product.service';
-import { Observable, map } from 'rxjs';
+import {  map } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
@@ -17,6 +17,7 @@ export class CartComponent  implements OnInit {
   private id: string | null = localStorage.getItem('idUser');
   ced: number = this.id ? parseInt(this.id, 10) : 0;
   product! : Product;
+  can: number=0
 
 
   constructor(private cartService: CartService, private productsService : ProductsService, private router: Router) {}
@@ -102,7 +103,9 @@ actualizarTotal(cart: Cart, event: any): void {
   if (nuevaCantidad !== undefined) {
     // Actualizar la cantidad en el objeto Cart
     cart.product.quantityToSell = parseInt(nuevaCantidad, 10);
+   
 
+    
     // Puedes agregar lógica adicional aquí según tus necesidades
 
     // Recalcular el total después del cambio en la cantidad
@@ -116,20 +119,11 @@ actualizarTotal(cart: Cart, event: any): void {
 
 // Función para simular la compra
 comprar(): void {
-  // Aquí puedes agregar la lógica para realizar la compra
-  // Puedes enviar la información al servidor, mostrar un mensaje, etc.
-  Swal.fire({
-    title: 'Compra realizada',
-    text: '¡Gracias por tu compra!',
-    icon: 'success',
-    confirmButtonText: 'Ok'
-  });
+  
 
-  // También puedes redirigir al usuario a otra página después de la compra
-  this.router.navigate(['/compra-realizada']);
-}
-
-// ... Tu código actual ...
+    this.router.navigateByUrl("sale/"+this.can);
 
 }
 
+
+}

@@ -12,6 +12,8 @@ import { NavBarAdminComponent } from '../admin/nav-bar-admin/nav-bar-admin.compo
 import { AdminModule } from '../admin/admin.module';
 import { HeaderModule } from '../header/header.module';
 import { NavbarModule } from '../navbar/navbar.module';
+import { CartModule } from '../cart/cart.module';
+
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { NavbarModule } from '../navbar/navbar.module';
     DetalleProductoComponent,
     ListByCategoryComponent,
     InventarioComponent,
+
     
 
   ],
@@ -31,7 +34,8 @@ import { NavbarModule } from '../navbar/navbar.module';
     ReactiveFormsModule,
     AdminModule,
     HeaderModule, 
-    NavbarModule
+    NavbarModule,
+    CartModule
   ],
   exports : [
     ItemsComponent,
@@ -39,6 +43,7 @@ import { NavbarModule } from '../navbar/navbar.module';
     DetalleProductoComponent,
     ListByCategoryComponent,
     InventarioComponent,
+
    
   ]
 })
