@@ -8,15 +8,15 @@ const routes: Routes = [
 
   {path: '',component: AddCategoryEmpComponent},
 
-  {path: 'agregarCategoriaEmp', component:AddCategoryEmpComponent},
+  {path: 'agregarCategoria', component:AddCategoryEmpComponent},
   
-  {path: 'agregaSupplierEmp', component:AddSupplierEmpComponent},
+  {path: 'agregarusuarioAdmin', component:AddSupplierEmpComponent},
 
-  {path: 'agregarProductoEmp', component:AddProductEmpComponent},
+  {path: 'agregarProducto', component:AddProductEmpComponent},
 
-  
+  {path: 'addSupplier', component:AddSupplierEmpComponent},
 
- 
+  {path: 'inventario'},
 
 ];
 

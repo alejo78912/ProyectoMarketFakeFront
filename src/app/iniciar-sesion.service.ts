@@ -12,7 +12,7 @@ export interface LoginResponse {
   providedIn: 'root'
 })
 export class IniciarSesionService {
-  private apiUrl = 'http://localhost:8080/api/auth'; // Ajusta esta URL según tu backend
+  private apiUrl = 'http://localhost:8080/api/auth'; 
 
   constructor(private http: HttpClient) {}
 
