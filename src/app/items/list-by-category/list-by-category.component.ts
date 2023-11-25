@@ -30,7 +30,8 @@ export class ListByCategoryComponent  implements OnInit{
       email: "",
       password: "",
       userType: "",
-      phoneNumber: ""
+      phoneNumber: "",
+      address:""
     },
     product :{
       idProduct: 0,
@@ -50,8 +51,10 @@ export class ListByCategoryComponent  implements OnInit{
         urlSupplier: ""
       },
       productName: "",
-      productDescription: ""
-    }
+      productDescription: "",
+      applyShipping:true, shippingValue:0
+    },
+    totalQuantity: 0
   }
   private id: string | null = localStorage.getItem('idUser');
 

@@ -9,7 +9,7 @@ import { employeeGuard } from 'src/auth/employee.guard';
 
 const routes: Routes = [{path : '', component:LogInComponent},
 
-{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),  },
+{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivateChild:[authGuard] },
 { path: 'empleado', loadChildren: () => import('./empleado/empleado.module').then(m => m.EmpleadoModule), canActivateChild:[employeeGuard]  },
 { path: 'articulos', loadChildren: () => import('./items/items.module').then(m => m.ItemsModule), canActivateChild:[guardUserGuard] },
 {path: 'login', component:LogInComponent},

@@ -17,7 +17,8 @@ export class AgregarUsuarioAdminComponent implements OnInit{
     email: "",
     password: "",
     userType: "",
-    phoneNumber: ""}; // Inicializa el modelo
+    phoneNumber: "",
+  address:""}; // Inicializa el modelo
 
   constructor(private AgregarUsuarioAdminService : AgregarUsuarioAdminService, private userService: UserService, private UsuarioServiceListar: UserService) {}
 

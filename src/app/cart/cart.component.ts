@@ -18,12 +18,14 @@ export class CartComponent  implements OnInit {
   ced: number = this.id ? parseInt(this.id, 10) : 0;
   product! : Product;
   can: number=0
+  cart! : Cart
 
 
   constructor(private cartService: CartService, private productsService : ProductsService, private router: Router) {}
   ngOnInit(): void {
     this.obtenerCarrito();
-    // this.obtenerProductoDelPrimerCarrito(); // Move this call inside the subscribe callback
+    this.asignarValorPorDefecto();
+
   }
   
 
@@ -88,31 +90,57 @@ calcularTotal(): number {
 
   if (this.carts) {
     this.carts.forEach(cart => {
-      total += cart.product.price * cart.product.quantityToSell;
+      total += cart.product.price * cart.totalQuantity;
     });
   }
 
   return total;
 }
 
-// ... Tu código actual ...
 
-// Función para manejar el cambio en la cantidad desde el combo
-actualizarTotal(cart: Cart, event: any): void {
-  const nuevaCantidad = event.target?.value; // Usar el operador de navegación segura
-  if (nuevaCantidad !== undefined) {
-    // Actualizar la cantidad en el objeto Cart
-    cart.product.quantityToSell = parseInt(nuevaCantidad, 10);
-   
-
-    
-    // Puedes agregar lógica adicional aquí según tus necesidades
-
-    // Recalcular el total después del cambio en la cantidad
-    const nuevoTotal = this.calcularTotal();
-    console.log('Nuevo Total:', nuevoTotal);
+asignarValorPorDefecto(): void {
+  // Verifica si hay carritos y si los carritos tienen productos
+  if (this.carts && this.carts.length > 0) {
+    // Itera sobre cada carrito
+    this.carts.forEach((cart) => {
+      // Verifica si el carrito tiene un producto
+      if (cart.product) {
+        // Asigna el valor por defecto al quantityToSell del producto en el carrito
+        cart.product.quantityToSell = 1; // Puedes ajustar el valor por defecto según tus necesidades
+      }
+    });
   }
 }
+
+actualizarTotal(cart: Cart, event: any): void {
+  const nuevaCantidad = event?.target?.value;
+
+  if (nuevaCantidad !== undefined) {
+    // Verificar si totalQuantity está definido; si no, establecerlo por defecto
+    cart.totalQuantity = cart.totalQuantity || 1;
+
+    // Actualizar la cantidad en el objeto Cart
+    cart.totalQuantity = parseInt(nuevaCantidad, 10);
+
+    // Llama al servicio para actualizar la cantidad en el carrito
+    this.cartService.actualizarCantidad(cart).subscribe(
+      (updatedCart) => {
+       
+        this.calcularTotal();
+      },
+      (error) => {
+        console.error('Error al actualizar la cantidad en el carrito:', error);
+      }
+    );
+  }
+}
+
+
+
+
+
+// ...
+
 
 // ... Tu código actual ...
 
@@ -121,7 +149,7 @@ actualizarTotal(cart: Cart, event: any): void {
 comprar(): void {
   
 
-    this.router.navigateByUrl("sale/"+this.can);
+    this.router.navigateByUrl("sale");
 
 }
 

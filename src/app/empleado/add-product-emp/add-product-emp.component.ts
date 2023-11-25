@@ -39,6 +39,8 @@ export class AddProductEmpComponent implements OnInit{
     },
     productName: "",
     productDescription: "",
+    applyShipping:true, 
+    shippingValue:0
     }; // Inicializa el modelo
 
     apiResponse :any = {
@@ -65,6 +67,8 @@ export class AddProductEmpComponent implements OnInit{
        console.log(data.category.idCategory)
         this.Produto.idProduct = 0;
         this.Produto.price = 0;
+        this.Produto.applyShipping=true;
+        this.Produto.shippingValue=0;
         this.Produto.url_photo = "";
         this.Produto.quantityToSell = 0;
         this.Produto.category = {

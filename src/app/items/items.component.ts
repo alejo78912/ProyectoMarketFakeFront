@@ -26,7 +26,8 @@ export class ItemsComponent implements OnInit{
       email: "",
       password: "",
       userType: "",
-      phoneNumber: ""
+      phoneNumber: "",
+      address:""
     },
     product :{
       idProduct: 0,
@@ -46,8 +47,11 @@ export class ItemsComponent implements OnInit{
         urlSupplier: ""
       },
       productName: "",
-      productDescription: ""
-    }
+      productDescription: "",
+      applyShipping:true, shippingValue:0
+      
+    },
+    totalQuantity:0
   }
   busque: string = '';
   private id: string | null = localStorage.getItem('idUser');

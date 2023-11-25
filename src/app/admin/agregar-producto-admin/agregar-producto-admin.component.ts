@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product.model';
 import { ProductsService } from '../../product.service';
 import { SwalUtils } from 'src/app/utils/swal-utils';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoriaService } from 'src/app/category.service';
 import { Category } from 'src/app/category.model';
 import { Supplier } from 'src/app/supplier.model';
@@ -25,6 +25,8 @@ export class AgregarProductoAdminComponent implements OnInit{
     price: 0,
     url_photo: "aa",
     quantityToSell: 0,
+    applyShipping:false, 
+    shippingValue:0,
     category:{
       idCategory: 0,
       categoryName: ''
@@ -39,14 +41,21 @@ export class AgregarProductoAdminComponent implements OnInit{
     },
     productName: "",
     productDescription: "",
+
     }; // Inicializa el modelo
 
     apiResponse :any = {
       "url": ""
     };
+
     
-    constructor(private productoServicio: ProductsService, private fb: FormBuilder, private CategoriaServicio: CategoriaService, private supplierService : SupplierServiceService) {
+   
     
+    constructor(private productoServicio: ProductsService, private fb: FormBuilder, private CategoriaServicio: CategoriaService, private supplierService : SupplierServiceService, ) {
+      
+      
+      
+      
     }
   ngOnInit(): void {
     this.CategoriaServicio.categorias().subscribe(data => {
@@ -60,9 +69,11 @@ export class AgregarProductoAdminComponent implements OnInit{
   }
   
   addProduct(): void {
-   
+   if(this.Produto.quantityToSell<300){
       this.productoServicio.addProduct(this.Produto).subscribe((data) => {
        console.log(data.category.idCategory)
+       console.log(data.shippingValue)
+       this.Produto.shippingValue = 0;
         this.Produto.idProduct = 0;
         this.Produto.price = 0;
         this.Produto.url_photo = "";
@@ -74,12 +85,17 @@ export class AgregarProductoAdminComponent implements OnInit{
         this.Produto.productName = "";
         this.Produto.productDescription = "";
         
+    
+        
       });
-      console.log(this.Produto);
+      console.log(this.Produto.shippingValue);
       
       SwalUtils.customMessageOk('Articulo Agregado','Inventario actualizado'); 
-
+    }else{
+      SwalUtils.customMessageError('La cantidad no es valida','Verifique que sea menor a 300'); 
     }
+    }
+    
 
   vaciarCampos():void{
 
@@ -101,6 +117,8 @@ export class AgregarProductoAdminComponent implements OnInit{
     };
     this.Produto.productName = "";
     this.Produto.productDescription = "";
+    this.Produto.shippingValue =0 
+    this.Produto.applyShipping =false
     
   
   }
@@ -114,7 +132,7 @@ export class AgregarProductoAdminComponent implements OnInit{
         
       });
 
-      SwalUtils.customMessageOk('aProducto Editado','Base de datos actualizada'); 
+      SwalUtils.customMessageOk('Producto Editado','Base de datos actualizada'); 
 
     }
 
@@ -152,10 +170,12 @@ export class AgregarProductoAdminComponent implements OnInit{
             SwalUtils.customMessageError('Error al subir la imagen:', error);
           }
         );
-      }
+
+       
+      
     }
    
-   
+  }
   
     validateImageSize(control: AbstractControl) {
       const file = control.value;
@@ -183,22 +203,36 @@ export class AgregarProductoAdminComponent implements OnInit{
         this.productoServicio.uploadImage(this.selectedFile).subscribe(
           (res) => {
             console.log(res);
-            
             this.Produto.url_photo = res; // Asigna la URL al atributo url_photo de Produto
-            
-            // Ahora puedes llamar a la función para agregar el producto
-            this.addProduct();
+            this.addOrUpdateProduct();
           },
           (error) => {
             console.log(error);
-            
             SwalUtils.customMessageError('Error al subir la imagen:', error);
           }
         );
       } else {
-        SwalUtils.customMessageError('No se ha seleccionado','ningún archivo de imagen.' );
+        // Si no se ha seleccionado ningún archivo de imagen, llama directamente a la función para agregar o actualizar el producto
+        this.addOrUpdateProduct();
       }
+
+    
     }
+    
+    private addOrUpdateProduct(): void {
+      // Asigna el valor de ShippingValue si applyShipping es true
+    
+      if (this.Produto.idProduct) {
+        this.ProductUpdate(); // Llama a la función para actualizar el producto
+      } else {
+        this.addProduct(); // Llama a la función para agregar el producto
+      }
+    
+      // Limpiar valores después de la operación (ajusta esto según tus necesidades)
+      this.selectedFile = null;
+      this.Produto.url_photo = '';
+    }
+    
     
     
 }

@@ -13,6 +13,7 @@ import { AdminModule } from '../admin/admin.module';
 import { HeaderModule } from '../header/header.module';
 import { NavbarModule } from '../navbar/navbar.module';
 import { CartModule } from '../cart/cart.module';
+import { SaleModule } from '../sale/sale.module';
 
 
 
@@ -35,7 +36,8 @@ import { CartModule } from '../cart/cart.module';
     AdminModule,
     HeaderModule, 
     NavbarModule,
-    CartModule
+    CartModule,
+    SaleModule
   ],
   exports : [
     ItemsComponent,

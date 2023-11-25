@@ -10,6 +10,8 @@ export class Product {
   productName: string;
   productDescription: string;
   supplier: Supplier;
+  applyShipping: boolean;
+  shippingValue:number;
 
   constructor(
     idProduct: number,
@@ -19,8 +21,13 @@ export class Product {
     category: Category,
     supplier: Supplier,
     productName: string,
-    productDescription: string
+    productDescription: string,
+    applyShipping: boolean,
+    shippingValue:number
+
   ) {
+    this.shippingValue = shippingValue;
+    this.applyShipping = applyShipping;
     this.idProduct = idProduct;
     this.price = price;
     this.url_photo = url_photo;

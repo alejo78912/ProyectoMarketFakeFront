@@ -1,8 +1,7 @@
 import { CanActivateChildFn, CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
-import { Utils } from 'src/app/utils/utils';
-import { IniciarSesionService, LoginResponse } from 'src/app/iniciar-sesion.service';
-import { LogInComponent } from 'src/app/log-in/log-in.component';
+import { IniciarSesionService } from 'src/app/iniciar-sesion.service';
+
 
 export const authGuard: CanActivateChildFn = async (childRoute, state) => {
   const router = inject(Router);

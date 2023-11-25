@@ -18,7 +18,8 @@ export class RegistrarseComponent {
     email: "",
     password: "",
     userType: "Cliente",
-    phoneNumber: ""}; // Inicializa el modelo
+    phoneNumber: "",
+  address:""}; // Inicializa el modelo
 
   constructor(private AgregarUsuarioAdminService : AgregarUsuarioAdminService, private router : Router) {}
 

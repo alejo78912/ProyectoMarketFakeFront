@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Sale } from './sale.model';
 import { Observable } from 'rxjs';
+import { User } from '../user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,12 @@ export class SaleService {
 
   constructor(private http: HttpClient) {}
 
-// sale.service.ts
-addSale(sale: Sale, totalQuantity: number): Observable<Blob> {
-  const url = `${this.apiUrl}/make-purchase?totalQuantity=${totalQuantity}`;
-  return this.http.post(url, sale, { responseType: 'blob' });
+// Modify the method to accept both sale and user information
+addSale(User: User): Observable<Blob> {
+
+
+  const url = `${this.apiUrl}/make-purchase`;
+  return this.http.post(url, User, { responseType: 'blob' });
 }
 
 

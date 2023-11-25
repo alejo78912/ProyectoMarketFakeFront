@@ -28,5 +28,12 @@ import { Cart } from './cart.model';
     return this.http.get<String>(url);
   }
 
+  
+  actualizarCantidad(nuevaCantidadObj: any): Observable<Cart> {
+    const url = `${this.apiUrl}/changeQuantity`;
+    return this.http.post<Cart>(url, nuevaCantidadObj);
+  }
+  
+
 
 }
