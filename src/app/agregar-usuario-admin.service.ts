@@ -8,7 +8,7 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class AgregarUsuarioAdminService {
-  private apiUrl = 'http://localhost:8080/api/usuarios'; // Reemplaza con la URL de tu API Spring Boot
+  private apiUrl = '/api/usuarios'; // Reemplaza con la URL de tu API Spring Boot
 
   constructor(private http: HttpClient) {}
 

@@ -7,7 +7,7 @@ import { Cart } from './cart.model';
 @Injectable({
   providedIn: 'root'
 })export class CartService {
-  private apiUrl = 'http://localhost:8080/api/cart'; // Reemplaza esto con la URL de tu backend Spring MVC
+  private apiUrl = '/api/cart'; // Reemplaza esto con la URL de tu backend Spring MVC
 
   constructor(private http: HttpClient) {}
 
